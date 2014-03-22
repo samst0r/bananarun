@@ -15,13 +15,14 @@
     self = [super init];
     if (self) {
         
-        [self setupBackground];
+        [self setup];
     }
     return self;
 }
 
-- (void)setupBackground {
+- (void)setup {
     
     self.texture = [SKTexture textureWithImageNamed:@"background"];
+    self.name = @"Background";
 }
 @end
