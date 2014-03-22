@@ -9,7 +9,7 @@
 #import "Scene.h"
 
 #import "BackgroundSpriteNode.h"
-#import "FootPrintShapeNode.h"
+#import "FootPrintSpriteNode.h"
 
 @interface Scene ()
 
@@ -50,8 +50,12 @@
     UITouch *touch = [touches anyObject];
     CGPoint positionInScene = [touch locationInNode:self];
  
-    FootPrintShapeNode *footprint = [[FootPrintShapeNode alloc] init];
+    FootPrintSpriteNode *footprint = [[FootPrintSpriteNode alloc] init];
     footprint.position = positionInScene;
+    
+    footprint.size = CGSizeMake(50, 90);
+    footprint.xScale = 0.5;
+    footprint.yScale = 0.5;
     
     [footprint hideAfterOneSecondsWithCompletion:^{
        

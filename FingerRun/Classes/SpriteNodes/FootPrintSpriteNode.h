@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface FootPrintShapeNode : SKShapeNode
+@interface FootPrintSpriteNode : SKSpriteNode
 
 - (void)hideAfterOneSecondsWithCompletion:(void (^)(void))completion;
 
