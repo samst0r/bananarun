@@ -27,6 +27,8 @@
 		22DE340E18DDB6DD004BA14C /* FingerRun-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33F318DDB00C004BA14C /* FingerRun-Prefix.pch */; };
 		22DE341218DDB7C3004BA14C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341018DDB7C3004BA14C /* Main_iPad.storyboard */; };
 		22DE341318DDB7C3004BA14C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */; };
+		22DE341618DDBE1B004BA14C /* FootPrintSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */; };
+		22DE341918DDCC77004BA14C /* RoadMarkerSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341818DDCC77004BA14C /* RoadMarkerSpriteNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,10 @@
 		22DE340018DDB4BE004BA14C /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scene.m; sourceTree = "<group>"; };
 		22DE341018DDB7C3004BA14C /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		22DE341418DDBE1B004BA14C /* FootPrintSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FootPrintSpriteNode.h; path = SpriteNodes/FootPrintSpriteNode.h; sourceTree = "<group>"; };
+		22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FootPrintSpriteNode.m; path = SpriteNodes/FootPrintSpriteNode.m; sourceTree = "<group>"; };
+		22DE341718DDCC77004BA14C /* RoadMarkerSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadMarkerSpriteNode.h; sourceTree = "<group>"; };
+		22DE341818DDCC77004BA14C /* RoadMarkerSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadMarkerSpriteNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				22DE33FE18DDB4BE004BA14C /* Scenes */,
-				22DE33FA18DDB44B004BA14C /* SpriteNodes */,
+				22DE33FA18DDB44B004BA14C /* Nodes */,
 				22DE33E918DDAFFE004BA14C /* ViewControllers */,
 				22DE33E418DDAFEF004BA14C /* AppDelegate.h */,
 				22DE33E518DDAFEF004BA14C /* AppDelegate.m */,
@@ -192,13 +198,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		22DE33FA18DDB44B004BA14C /* SpriteNodes */ = {
+		22DE33FA18DDB44B004BA14C /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
 				22DE33FB18DDB4A4004BA14C /* BackgroundSpriteNode.h */,
 				22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */,
+				22DE341418DDBE1B004BA14C /* FootPrintSpriteNode.h */,
+				22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */,
+				22DE341718DDCC77004BA14C /* RoadMarkerSpriteNode.h */,
+				22DE341818DDCC77004BA14C /* RoadMarkerSpriteNode.m */,
 			);
-			name = SpriteNodes;
+			name = Nodes;
 			sourceTree = "<group>";
 		};
 		22DE33FE18DDB4BE004BA14C /* Scenes */ = {
@@ -266,6 +276,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Samuel Ward";
 				TargetAttributes = {
+					22DE33A018DDAF0A004BA14C = {
+						DevelopmentTeam = RCHUN65RQ4;
+					};
 					22DE33CB18DDAF0A004BA14C = {
 						TestTargetID = 22DE33A018DDAF0A004BA14C;
 					};
@@ -320,7 +333,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DE340118DDB4BE004BA14C /* Scene.m in Sources */,
+				22DE341918DDCC77004BA14C /* RoadMarkerSpriteNode.m in Sources */,
 				22DE33FD18DDB4A4004BA14C /* BackgroundSpriteNode.m in Sources */,
+				22DE341618DDBE1B004BA14C /* FootPrintSpriteNode.m in Sources */,
 				22DE33E718DDAFEF004BA14C /* AppDelegate.m in Sources */,
 				22DE33E818DDAFEF004BA14C /* main.m in Sources */,
 				22DE33F018DDAFFE004BA14C /* ViewController.m in Sources */,
@@ -444,10 +459,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FingerRun/Resources/FingerRun-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/FingerRun/Resources/FingerRun-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -458,10 +476,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FingerRun/Resources/FingerRun-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/FingerRun/Resources/FingerRun-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -528,6 +549,7 @@
 				22DE33DF18DDAF0A004BA14C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22DE33E018DDAF0A004BA14C /* Build configuration list for PBXNativeTarget "FingerRunTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +558,7 @@
 				22DE33E218DDAF0A004BA14C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
