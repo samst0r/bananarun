@@ -12,9 +12,6 @@
 		22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A818DDAF0A004BA14C /* UIKit.framework */; };
 		22DE33AB18DDAF0A004BA14C /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33AA18DDAF0A004BA14C /* SpriteKit.framework */; };
 		22DE33B118DDAF0A004BA14C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33AF18DDAF0A004BA14C /* InfoPlist.strings */; };
-		22DE33B318DDAF0A004BA14C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33B218DDAF0A004BA14C /* main.m */; };
-		22DE33BA18DDAF0A004BA14C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33B818DDAF0A004BA14C /* Main_iPhone.storyboard */; };
-		22DE33BD18DDAF0A004BA14C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33BB18DDAF0A004BA14C /* Main_iPad.storyboard */; };
 		22DE33CE18DDAF0A004BA14C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33CD18DDAF0A004BA14C /* XCTest.framework */; };
 		22DE33CF18DDAF0A004BA14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A418DDAF0A004BA14C /* Foundation.framework */; };
 		22DE33D018DDAF0A004BA14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A818DDAF0A004BA14C /* UIKit.framework */; };
@@ -22,11 +19,14 @@
 		22DE33DA18DDAF0A004BA14C /* FingerRunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33D918DDAF0A004BA14C /* FingerRunTests.m */; };
 		22DE33E718DDAFEF004BA14C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33E518DDAFEF004BA14C /* AppDelegate.m */; };
 		22DE33E818DDAFEF004BA14C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33E618DDAFEF004BA14C /* main.m */; };
-		22DE33EF18DDAFFE004BA14C /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33EC18DDAFFE004BA14C /* MyScene.m */; };
 		22DE33F018DDAFFE004BA14C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33EE18DDAFFE004BA14C /* ViewController.m */; };
-		22DE33F618DDB00C004BA14C /* FingerRun-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33F218DDB00C004BA14C /* FingerRun-Info.plist */; };
 		22DE33F718DDB00C004BA14C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33F418DDB00C004BA14C /* Images.xcassets */; };
-		22DE33F818DDB00C004BA14C /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33F518DDB00C004BA14C /* Spaceship.png */; };
+		22DE33FD18DDB4A4004BA14C /* BackgroundSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */; };
+		22DE340118DDB4BE004BA14C /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE340018DDB4BE004BA14C /* Scene.m */; };
+		22DE340D18DDB69C004BA14C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33D618DDAF0A004BA14C /* InfoPlist.strings */; };
+		22DE340E18DDB6DD004BA14C /* FingerRun-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33F318DDB00C004BA14C /* FingerRun-Prefix.pch */; };
+		22DE341218DDB7C3004BA14C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341018DDB7C3004BA14C /* Main_iPad.storyboard */; };
+		22DE341318DDB7C3004BA14C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,12 +45,7 @@
 		22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		22DE33A818DDAF0A004BA14C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22DE33AA18DDAF0A004BA14C /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		22DE33AE18DDAF0A004BA14C /* FingerRun-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FingerRun-Info.plist"; sourceTree = "<group>"; };
 		22DE33B018DDAF0A004BA14C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		22DE33B218DDAF0A004BA14C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		22DE33B418DDAF0A004BA14C /* FingerRun-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FingerRun-Prefix.pch"; sourceTree = "<group>"; };
-		22DE33B918DDAF0A004BA14C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		22DE33BC18DDAF0A004BA14C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		22DE33CC18DDAF0A004BA14C /* FingerRunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FingerRunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DE33CD18DDAF0A004BA14C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		22DE33D518DDAF0A004BA14C /* FingerRunTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FingerRunTests-Info.plist"; sourceTree = "<group>"; };
@@ -59,14 +54,17 @@
 		22DE33E418DDAFEF004BA14C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		22DE33E518DDAFEF004BA14C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		22DE33E618DDAFEF004BA14C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		22DE33EB18DDAFFE004BA14C /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		22DE33EC18DDAFFE004BA14C /* MyScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
 		22DE33ED18DDAFFE004BA14C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		22DE33EE18DDAFFE004BA14C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		22DE33F218DDB00C004BA14C /* FingerRun-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FingerRun-Info.plist"; sourceTree = "<group>"; };
 		22DE33F318DDB00C004BA14C /* FingerRun-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FingerRun-Prefix.pch"; sourceTree = "<group>"; };
 		22DE33F418DDB00C004BA14C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		22DE33F518DDB00C004BA14C /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		22DE33FB18DDB4A4004BA14C /* BackgroundSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundSpriteNode.h; path = SpriteNodes/BackgroundSpriteNode.h; sourceTree = "<group>"; };
+		22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundSpriteNode.m; path = SpriteNodes/BackgroundSpriteNode.m; sourceTree = "<group>"; };
+		22DE33FF18DDB4BE004BA14C /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		22DE340018DDB4BE004BA14C /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scene.m; sourceTree = "<group>"; };
+		22DE341018DDB7C3004BA14C /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				22DE33E318DDAFEF004BA14C /* Classes */,
-				22DE33F918DDB01D004BA14C /* Storyboards */,
 				22DE33F118DDB00C004BA14C /* Resources */,
 				22DE33AD18DDAF0A004BA14C /* Supporting Files */,
 			);
@@ -139,10 +136,7 @@
 		22DE33AD18DDAF0A004BA14C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				22DE33AE18DDAF0A004BA14C /* FingerRun-Info.plist */,
 				22DE33AF18DDAF0A004BA14C /* InfoPlist.strings */,
-				22DE33B218DDAF0A004BA14C /* main.m */,
-				22DE33B418DDAF0A004BA14C /* FingerRun-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -168,7 +162,8 @@
 		22DE33E318DDAFEF004BA14C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				22DE33EA18DDAFFE004BA14C /* Scenes */,
+				22DE33FE18DDB4BE004BA14C /* Scenes */,
+				22DE33FA18DDB44B004BA14C /* SpriteNodes */,
 				22DE33E918DDAFFE004BA14C /* ViewControllers */,
 				22DE33E418DDAFEF004BA14C /* AppDelegate.h */,
 				22DE33E518DDAFEF004BA14C /* AppDelegate.m */,
@@ -186,34 +181,42 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		22DE33EA18DDAFFE004BA14C /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				22DE33EB18DDAFFE004BA14C /* MyScene.h */,
-				22DE33EC18DDAFFE004BA14C /* MyScene.m */,
-			);
-			name = Scenes;
-			path = ViewControllers/Scenes;
-			sourceTree = "<group>";
-		};
 		22DE33F118DDB00C004BA14C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22DE340F18DDB7C3004BA14C /* Storyboards */,
 				22DE33F218DDB00C004BA14C /* FingerRun-Info.plist */,
 				22DE33F318DDB00C004BA14C /* FingerRun-Prefix.pch */,
 				22DE33F418DDB00C004BA14C /* Images.xcassets */,
-				22DE33F518DDB00C004BA14C /* Spaceship.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		22DE33F918DDB01D004BA14C /* Storyboards */ = {
+		22DE33FA18DDB44B004BA14C /* SpriteNodes */ = {
 			isa = PBXGroup;
 			children = (
-				22DE33BB18DDAF0A004BA14C /* Main_iPad.storyboard */,
-				22DE33B818DDAF0A004BA14C /* Main_iPhone.storyboard */,
+				22DE33FB18DDB4A4004BA14C /* BackgroundSpriteNode.h */,
+				22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */,
 			);
-			name = Storyboards;
+			name = SpriteNodes;
+			sourceTree = "<group>";
+		};
+		22DE33FE18DDB4BE004BA14C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				22DE33FF18DDB4BE004BA14C /* Scene.h */,
+				22DE340018DDB4BE004BA14C /* Scene.m */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		22DE340F18DDB7C3004BA14C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				22DE341018DDB7C3004BA14C /* Main_iPad.storyboard */,
+				22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,12 +295,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22DE33BD18DDAF0A004BA14C /* Main_iPad.storyboard in Resources */,
+				22DE341218DDB7C3004BA14C /* Main_iPad.storyboard in Resources */,
+				22DE340E18DDB6DD004BA14C /* FingerRun-Prefix.pch in Resources */,
+				22DE341318DDB7C3004BA14C /* Main_iPhone.storyboard in Resources */,
+				22DE340D18DDB69C004BA14C /* InfoPlist.strings in Resources */,
 				22DE33F718DDB00C004BA14C /* Images.xcassets in Resources */,
-				22DE33BA18DDAF0A004BA14C /* Main_iPhone.storyboard in Resources */,
 				22DE33B118DDAF0A004BA14C /* InfoPlist.strings in Resources */,
-				22DE33F818DDB00C004BA14C /* Spaceship.png in Resources */,
-				22DE33F618DDB00C004BA14C /* FingerRun-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,10 +319,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22DE33EF18DDAFFE004BA14C /* MyScene.m in Sources */,
+				22DE340118DDB4BE004BA14C /* Scene.m in Sources */,
+				22DE33FD18DDB4A4004BA14C /* BackgroundSpriteNode.m in Sources */,
 				22DE33E718DDAFEF004BA14C /* AppDelegate.m in Sources */,
 				22DE33E818DDAFEF004BA14C /* main.m in Sources */,
-				22DE33B318DDAF0A004BA14C /* main.m in Sources */,
 				22DE33F018DDAFFE004BA14C /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,22 +352,6 @@
 				22DE33B018DDAF0A004BA14C /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		22DE33B818DDAF0A004BA14C /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22DE33B918DDAF0A004BA14C /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		22DE33BB18DDAF0A004BA14C /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22DE33BC18DDAF0A004BA14C /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		22DE33D618DDAF0A004BA14C /* InfoPlist.strings */ = {
@@ -458,8 +445,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FingerRun/FingerRun-Prefix.pch";
-				INFOPLIST_FILE = "FingerRun/FingerRun-Info.plist";
+				GCC_PREFIX_HEADER = "FingerRun/Resources/FingerRun-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/FingerRun/Resources/FingerRun-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -472,8 +459,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FingerRun/FingerRun-Prefix.pch";
-				INFOPLIST_FILE = "FingerRun/FingerRun-Info.plist";
+				GCC_PREFIX_HEADER = "FingerRun/Resources/FingerRun-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/FingerRun/Resources/FingerRun-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
