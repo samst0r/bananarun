@@ -29,6 +29,7 @@
 		22DE341318DDB7C3004BA14C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */; };
 		22DE341618DDBE1B004BA14C /* FootPrintSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */; };
 		22DE341918DDCC77004BA14C /* RoadMarkerSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341818DDCC77004BA14C /* RoadMarkerSpriteNode.m */; };
+		22DE341D18DE2F7E004BA14C /* BananaObsticleSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341C18DE2F7E004BA14C /* BananaObsticleSpriteNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,9 @@
 		22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FootPrintSpriteNode.m; path = SpriteNodes/FootPrintSpriteNode.m; sourceTree = "<group>"; };
 		22DE341718DDCC77004BA14C /* RoadMarkerSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadMarkerSpriteNode.h; sourceTree = "<group>"; };
 		22DE341818DDCC77004BA14C /* RoadMarkerSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadMarkerSpriteNode.m; sourceTree = "<group>"; };
+		22DE341B18DE2F7E004BA14C /* BananaObsticleSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BananaObsticleSpriteNode.h; path = SpriteNodes/Obsticles/BananaObsticleSpriteNode.h; sourceTree = "<group>"; };
+		22DE341C18DE2F7E004BA14C /* BananaObsticleSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BananaObsticleSpriteNode.m; path = SpriteNodes/Obsticles/BananaObsticleSpriteNode.m; sourceTree = "<group>"; };
+		22DE341E18DE36FE004BA14C /* CollisionCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionCategories.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,8 @@
 		22DE33FA18DDB44B004BA14C /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				22DE341E18DE36FE004BA14C /* CollisionCategories.h */,
+				22DE341A18DE2F62004BA14C /* Obsticles */,
 				22DE33FB18DDB4A4004BA14C /* BackgroundSpriteNode.h */,
 				22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */,
 				22DE341418DDBE1B004BA14C /* FootPrintSpriteNode.h */,
@@ -227,6 +233,15 @@
 				22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		22DE341A18DE2F62004BA14C /* Obsticles */ = {
+			isa = PBXGroup;
+			children = (
+				22DE341B18DE2F7E004BA14C /* BananaObsticleSpriteNode.h */,
+				22DE341C18DE2F7E004BA14C /* BananaObsticleSpriteNode.m */,
+			);
+			name = Obsticles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DE341D18DE2F7E004BA14C /* BananaObsticleSpriteNode.m in Sources */,
 				22DE340118DDB4BE004BA14C /* Scene.m in Sources */,
 				22DE341918DDCC77004BA14C /* RoadMarkerSpriteNode.m in Sources */,
 				22DE33FD18DDB4A4004BA14C /* BackgroundSpriteNode.m in Sources */,
