@@ -86,17 +86,6 @@
     
     [self addChild:_roadMarkerNode];
 }
-- (void)recordTopSpeed {
-    if (self.roadMarkerNode.speed > self.topSpeed) {
-        
-        self.topSpeed = self.roadMarkerNode.speed;
-        self.topSpeedLabel.text = [NSString stringWithFormat:@"Top Speed %.02f MPH", self.roadMarkerNode.speed];
-    }
-}
-
-- (void)recordSpeed {
-    self.speedLabel.text = [NSString stringWithFormat:@"%.02f MPH", self.roadMarkerNode.speed];
-}
 
 //- (void)setupRoadMarker {
 //    
@@ -126,8 +115,17 @@
 //    
 //}
 
+#pragma mark - Scene Update
 - (void)update:(NSTimeInterval)currentTime {
     
+    [self moveRoadMarker];
+    
+    [self recordSpeed];
+    [self recordTopSpeed];
+}
+
+#pragma mark - Scene Update Helpers
+- (void)moveRoadMarker {
     self.roadMarkerNode.position = CGPointMake(self.roadMarkerNode.position.x,
                                                self.roadMarkerNode.position.y + self.roadMarkerNode.speed);
     
@@ -136,17 +134,16 @@
         self.roadMarkerNode.position = CGPointMake(self.roadMarkerNode.position.x,
                                                    0);
     }
-    
-    [self recordSpeed];
-    [self recordTopSpeed];
 }
 
-#pragma mark - Touch
+#pragma mark - Obsticle Movement Helpers
+
+#pragma mark - User Tap Helpers
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [touches anyObject];
     CGPoint positionInScene = [touch locationInNode:self];
- 
+    
     FootPrintSpriteNode *footprint = [[FootPrintSpriteNode alloc] init];
     footprint.position = positionInScene;
     
@@ -155,7 +152,7 @@
     footprint.yScale = 0.5;
     
     [footprint hideAfterOneSecondsWithCompletion:^{
-       
+        
         [self removeChildrenInArray:@[footprint]];
         
     }];
@@ -174,5 +171,22 @@
         }
     });
 }
+
+#pragma mark - HUD Helpers
+- (void)recordTopSpeed {
+    if (self.roadMarkerNode.speed > self.topSpeed) {
+        
+        self.topSpeed = self.roadMarkerNode.speed;
+        self.topSpeedLabel.text = [NSString stringWithFormat:@"Top Speed %.02f MPH", self.roadMarkerNode.speed];
+    }
+}
+
+- (void)recordSpeed {
+    self.speedLabel.text = [NSString stringWithFormat:@"%.02f MPH", self.roadMarkerNode.speed];
+}
+
+#pragma mark - Physics Contact Helpers
+
+#pragma mark - Game End Helpers
 
 @end
