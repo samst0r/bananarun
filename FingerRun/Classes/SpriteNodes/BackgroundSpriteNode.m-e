@@ -25,4 +25,5 @@
     self.texture = [SKTexture textureWithImageNamed:@"background"];
     self.name = @"Background";
 }
+
 @end

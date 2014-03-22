@@ -75,13 +75,6 @@
     int maxDuration = 4.0;
     int rangeDuration = maxDuration - minDuration;
     int actualDuration = (arc4random() % rangeDuration) + minDuration;
-    
-    // Create the actions
-    SKAction *actionMove = [SKAction moveTo:CGPointMake(self.background.position.x, -positionInScene.y)
-                                   duration:actualDuration];
-    
-    [self.background runAction:actionMove];
 }
-
 
 @end
