@@ -28,6 +28,7 @@
 		22DE341218DDB7C3004BA14C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341018DDB7C3004BA14C /* Main_iPad.storyboard */; };
 		22DE341318DDB7C3004BA14C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */; };
 		22DE341618DDBE1B004BA14C /* FootPrintSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */; };
+		22DE341918DDCC77004BA14C /* RoadMarkerSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341818DDCC77004BA14C /* RoadMarkerSpriteNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		22DE341418DDBE1B004BA14C /* FootPrintSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FootPrintSpriteNode.h; path = SpriteNodes/FootPrintSpriteNode.h; sourceTree = "<group>"; };
 		22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FootPrintSpriteNode.m; path = SpriteNodes/FootPrintSpriteNode.m; sourceTree = "<group>"; };
+		22DE341718DDCC77004BA14C /* RoadMarkerSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadMarkerSpriteNode.h; sourceTree = "<group>"; };
+		22DE341818DDCC77004BA14C /* RoadMarkerSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadMarkerSpriteNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,8 @@
 				22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */,
 				22DE341418DDBE1B004BA14C /* FootPrintSpriteNode.h */,
 				22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */,
+				22DE341718DDCC77004BA14C /* RoadMarkerSpriteNode.h */,
+				22DE341818DDCC77004BA14C /* RoadMarkerSpriteNode.m */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DE340118DDB4BE004BA14C /* Scene.m in Sources */,
+				22DE341918DDCC77004BA14C /* RoadMarkerSpriteNode.m in Sources */,
 				22DE33FD18DDB4A4004BA14C /* BackgroundSpriteNode.m in Sources */,
 				22DE341618DDBE1B004BA14C /* FootPrintSpriteNode.m in Sources */,
 				22DE33E718DDAFEF004BA14C /* AppDelegate.m in Sources */,
