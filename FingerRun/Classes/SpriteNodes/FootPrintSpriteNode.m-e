@@ -34,7 +34,7 @@
     
     self.physicsBody.categoryBitMask = ColliderTypeFootprint;
     
-    self.physicsBody.collisionBitMask = ColliderTypeBanana;
+//    self.physicsBody.collisionBitMask = ColliderTypeBanana;
     self.physicsBody.contactTestBitMask = ColliderTypeBanana;
 }
 

@@ -37,11 +37,11 @@
 
 - (void)setupAndAddHighestSpeedLabel {
     
-    _highestAllTimeSpeedLabel = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
-    _highestAllTimeSpeedLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame) - 40.0f);
+    _highestAllTimeSpeedLabel = [[SKLabelNode alloc] initWithFontNamed:@"ChalkboardSE-Bold"];
+    _highestAllTimeSpeedLabel.position = CGPointMake(CGRectGetMidX(self.frame) + 50, CGRectGetHeight(self.frame) - 40.0f);
     _highestAllTimeSpeedLabel.fontSize = 14.0f;
     _highestAllTimeSpeedLabel.text = @"";
-    _highestAllTimeSpeedLabel.fontColor = [UIColor redColor];
+    _highestAllTimeSpeedLabel.fontColor = [UIColor greenColor];
     _highestAllTimeSpeedLabel.alpha = 0.85f;
     
     [self addChild:_highestAllTimeSpeedLabel];
@@ -49,11 +49,11 @@
 
 - (void)setupAndAddSpeedLabel {
     
-    _speedLabel = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
+    _speedLabel = [[SKLabelNode alloc] initWithFontNamed:@"ChalkboardSE-Bold"];
     _speedLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame) - 80.0f);
-    _speedLabel.fontSize = 18.0f;
+    _speedLabel.fontSize = 24.0f;
     _speedLabel.text = @"";
-    _speedLabel.fontColor = [UIColor yellowColor];
+    _speedLabel.fontColor = [UIColor purpleColor];
     _speedLabel.alpha = 0.85f;
     
     [self addChild:_speedLabel];
@@ -61,11 +61,11 @@
 
 - (void)setupAndAddTopSpeedLabel {
     
-    _topSpeedLabel = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
-    _topSpeedLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame) - 100.0f);
+    _topSpeedLabel = [[SKLabelNode alloc] initWithFontNamed:@"ChalkboardSE-Bold"];
+    _topSpeedLabel.position = CGPointMake(CGRectGetMidX(self.frame) - 50, CGRectGetHeight(self.frame) - 40.0f);
     _topSpeedLabel.fontSize = 14.0f;
     _topSpeedLabel.text = @"";
-    _topSpeedLabel.fontColor = [UIColor greenColor];
+    _topSpeedLabel.fontColor = [UIColor yellowColor];
     _topSpeedLabel.alpha = 0.85f;
     
     [self addChild:_topSpeedLabel];
@@ -83,6 +83,7 @@
 }
 
 - (void)addBanana {
+    
     BananaObsticleSpriteNode *banana = [[BananaObsticleSpriteNode alloc] init];
     banana.position = CGPointMake(arc4random_uniform(CGRectGetWidth(self.frame)), CGRectGetHeight(self.frame) + 50.0f);
     [self addChild:banana];
@@ -120,8 +121,18 @@
     
     _roadMarkerNode = [[RoadMarkerSpriteNode alloc] init];
     _roadMarkerNode.position = CGPointMake(CGRectGetMidX(self.frame), 0);
-    _roadMarkerNode.size = CGSizeMake(20, 80);
+    _roadMarkerNode.size = CGSizeMake(40, CGRectGetHeight(self.frame));
     
+    RoadMarkerSpriteNode *roadMarkerNode2 = [[RoadMarkerSpriteNode alloc] init];
+    roadMarkerNode2.position = CGPointMake(0, CGRectGetHeight(self.frame) + 35);
+    roadMarkerNode2.size = CGSizeMake(40, CGRectGetHeight(self.frame));
+    
+    RoadMarkerSpriteNode *roadMarkerNode3 = [[RoadMarkerSpriteNode alloc] init];
+    roadMarkerNode3.position = CGPointMake(0, -CGRectGetHeight(self.frame) + 35);
+    roadMarkerNode3.size = CGSizeMake(40, CGRectGetHeight(self.frame));
+    
+    [_roadMarkerNode addChild:roadMarkerNode2];
+    [_roadMarkerNode addChild:roadMarkerNode3];
     [self addChild:_roadMarkerNode];
 }
 
@@ -154,9 +165,9 @@
     self.roadMarkerNode.position = CGPointMake(self.roadMarkerNode.position.x,
                                                self.roadMarkerNode.position.y - self.movementSpeed);
     
-    if (self.roadMarkerNode.position.y <= 0) {
+    if (self.roadMarkerNode.position.y <= 300) {
         
-        self.roadMarkerNode.position = CGPointMake(self.roadMarkerNode.position.x, CGRectGetHeight(self.frame) + self.roadMarkerNode.position.y);
+        self.roadMarkerNode.position = CGPointMake(self.roadMarkerNode.position.x, CGRectGetHeight(self.frame) + self.roadMarkerNode.position.y + -30);
     }
 }
 
@@ -200,19 +211,19 @@
 #pragma mark - HUD Helpers
 - (void)recordCurrentTopSpeed {
     
-    if (self.movementSpeed > self.topSpeed) {
+    if (self.movementSpeed >= self.topSpeed) {
         
         self.topSpeed = self.movementSpeed;
-        self.topSpeedLabel.text = [NSString stringWithFormat:@"Top Speed: %li MPH", self.movementSpeed];
+        self.topSpeedLabel.text = [NSString stringWithFormat:@"%li MPH", self.topSpeed];
     }
 }
 
 - (void)recordHighestAllTimeSpeed {
     
-    if (self.topSpeed > self.highestAllTimeSpeed) {
+    if (self.topSpeed >= self.highestAllTimeSpeed) {
         
         self.highestAllTimeSpeed = self.topSpeed;
-        self.highestAllTimeSpeedLabel.text = [NSString stringWithFormat:@"BEST SPEED %li MPH", self.highestAllTimeSpeed];
+        self.highestAllTimeSpeedLabel.text = [NSString stringWithFormat:@"%li MPH (All Time)", self.highestAllTimeSpeed];
     }
 }
 
@@ -225,24 +236,20 @@
 - (void)didBeginContact:(SKPhysicsContact *)contact {
     
     BananaObsticleSpriteNode *node = (BananaObsticleSpriteNode *)contact.bodyA.node;
-    FootPrintSpriteNode *footPrint = (FootPrintSpriteNode *)contact.bodyA.node;
+    FootPrintSpriteNode *footPrint = (FootPrintSpriteNode *)contact.bodyB.node;
 
     if (footPrint.alpha == 1.0f) {
         
         node.size = CGSizeMake(100.0f, 100.0f);
-        self.topSpeed = 0;
+
         self.movementSpeed = 0;
+        self.topSpeed = 0;
         
         [node hideAfterOneSecondsWithCompletion:^{
             
             [node removeFromParent];
         }];
     }
-}
-
-#pragma mark - Game End Helpers
-- (void)gameOver {
-    
 }
 
 @end

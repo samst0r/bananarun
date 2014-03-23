@@ -41,8 +41,8 @@
 
 - (void)hideAfterOneSecondsWithCompletion:(void (^)(void))completion {
     
-    SKAction *moveBackAndFade = [SKAction group:@[[SKAction rotateByAngle:degreesToRadians(720) duration:2],
-                                                  [SKAction fadeOutWithDuration:2]]];
+    SKAction *moveBackAndFade = [SKAction group:@[[SKAction rotateByAngle:degreesToRadians(720) duration:1],
+                                                  [SKAction fadeOutWithDuration:1]]];
     
     SKAction *fadeOut = [SKAction sequence:@[[SKAction waitForDuration:0.25],
                                              moveBackAndFade,
