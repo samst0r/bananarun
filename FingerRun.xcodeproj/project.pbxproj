@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22550D4718DEEA5500168887 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22550D4618DEEA5500168887 /* GameOverScene.m */; };
 		22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A418DDAF0A004BA14C /* Foundation.framework */; };
 		22DE33A718DDAF0A004BA14C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */; };
 		22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A818DDAF0A004BA14C /* UIKit.framework */; };
@@ -22,13 +23,14 @@
 		22DE33F018DDAFFE004BA14C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33EE18DDAFFE004BA14C /* ViewController.m */; };
 		22DE33F718DDB00C004BA14C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33F418DDB00C004BA14C /* Images.xcassets */; };
 		22DE33FD18DDB4A4004BA14C /* BackgroundSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */; };
-		22DE340118DDB4BE004BA14C /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE340018DDB4BE004BA14C /* Scene.m */; };
+		22DE340118DDB4BE004BA14C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE340018DDB4BE004BA14C /* GameScene.m */; };
 		22DE340D18DDB69C004BA14C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33D618DDAF0A004BA14C /* InfoPlist.strings */; };
 		22DE340E18DDB6DD004BA14C /* FingerRun-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33F318DDB00C004BA14C /* FingerRun-Prefix.pch */; };
 		22DE341218DDB7C3004BA14C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341018DDB7C3004BA14C /* Main_iPad.storyboard */; };
 		22DE341318DDB7C3004BA14C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */; };
 		22DE341618DDBE1B004BA14C /* FootPrintSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */; };
 		22DE341918DDCC77004BA14C /* RoadMarkerSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341818DDCC77004BA14C /* RoadMarkerSpriteNode.m */; };
+		22DE341D18DE2F7E004BA14C /* BananaObsticleSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341C18DE2F7E004BA14C /* BananaObsticleSpriteNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22550D4518DEEA5500168887 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		22550D4618DEEA5500168887 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		22DE33A118DDAF0A004BA14C /* FingerRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FingerRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DE33A418DDAF0A004BA14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,14 +67,17 @@
 		22DE33F418DDB00C004BA14C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22DE33FB18DDB4A4004BA14C /* BackgroundSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundSpriteNode.h; path = SpriteNodes/BackgroundSpriteNode.h; sourceTree = "<group>"; };
 		22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundSpriteNode.m; path = SpriteNodes/BackgroundSpriteNode.m; sourceTree = "<group>"; };
-		22DE33FF18DDB4BE004BA14C /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
-		22DE340018DDB4BE004BA14C /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scene.m; sourceTree = "<group>"; };
+		22DE33FF18DDB4BE004BA14C /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		22DE340018DDB4BE004BA14C /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		22DE341018DDB7C3004BA14C /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		22DE341418DDBE1B004BA14C /* FootPrintSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FootPrintSpriteNode.h; path = SpriteNodes/FootPrintSpriteNode.h; sourceTree = "<group>"; };
 		22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FootPrintSpriteNode.m; path = SpriteNodes/FootPrintSpriteNode.m; sourceTree = "<group>"; };
 		22DE341718DDCC77004BA14C /* RoadMarkerSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadMarkerSpriteNode.h; sourceTree = "<group>"; };
 		22DE341818DDCC77004BA14C /* RoadMarkerSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadMarkerSpriteNode.m; sourceTree = "<group>"; };
+		22DE341B18DE2F7E004BA14C /* BananaObsticleSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BananaObsticleSpriteNode.h; path = SpriteNodes/Obsticles/BananaObsticleSpriteNode.h; sourceTree = "<group>"; };
+		22DE341C18DE2F7E004BA14C /* BananaObsticleSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BananaObsticleSpriteNode.m; path = SpriteNodes/Obsticles/BananaObsticleSpriteNode.m; sourceTree = "<group>"; };
+		22DE341E18DE36FE004BA14C /* CollisionCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionCategories.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +208,8 @@
 		22DE33FA18DDB44B004BA14C /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				22DE341E18DE36FE004BA14C /* CollisionCategories.h */,
+				22DE341A18DE2F62004BA14C /* Obsticles */,
 				22DE33FB18DDB4A4004BA14C /* BackgroundSpriteNode.h */,
 				22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */,
 				22DE341418DDBE1B004BA14C /* FootPrintSpriteNode.h */,
@@ -214,8 +223,10 @@
 		22DE33FE18DDB4BE004BA14C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				22DE33FF18DDB4BE004BA14C /* Scene.h */,
-				22DE340018DDB4BE004BA14C /* Scene.m */,
+				22DE33FF18DDB4BE004BA14C /* GameScene.h */,
+				22DE340018DDB4BE004BA14C /* GameScene.m */,
+				22550D4518DEEA5500168887 /* GameOverScene.h */,
+				22550D4618DEEA5500168887 /* GameOverScene.m */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -227,6 +238,15 @@
 				22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		22DE341A18DE2F62004BA14C /* Obsticles */ = {
+			isa = PBXGroup;
+			children = (
+				22DE341B18DE2F7E004BA14C /* BananaObsticleSpriteNode.h */,
+				22DE341C18DE2F7E004BA14C /* BananaObsticleSpriteNode.m */,
+			);
+			name = Obsticles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,7 +352,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22DE340118DDB4BE004BA14C /* Scene.m in Sources */,
+				22DE341D18DE2F7E004BA14C /* BananaObsticleSpriteNode.m in Sources */,
+				22550D4718DEEA5500168887 /* GameOverScene.m in Sources */,
+				22DE340118DDB4BE004BA14C /* GameScene.m in Sources */,
 				22DE341918DDCC77004BA14C /* RoadMarkerSpriteNode.m in Sources */,
 				22DE33FD18DDB4A4004BA14C /* BackgroundSpriteNode.m in Sources */,
 				22DE341618DDBE1B004BA14C /* FootPrintSpriteNode.m in Sources */,
