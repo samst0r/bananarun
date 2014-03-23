@@ -44,6 +44,8 @@
     SKAction *moveBackAndFade = [SKAction group:@[[SKAction rotateByAngle:degreesToRadians(720) duration:1],
                                                   [SKAction fadeOutWithDuration:1]]];
     
+//    SKAction* soundAction  = [SKAction playSoundFileNamed:soundFileName waitForCompletion:YES];
+    
     SKAction *fadeOut = [SKAction sequence:@[[SKAction waitForDuration:0.25],
                                              moveBackAndFade,
                                              [SKAction runBlock:completion]]];

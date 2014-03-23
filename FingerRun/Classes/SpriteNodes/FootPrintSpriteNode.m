@@ -40,8 +40,8 @@
 
 - (void)hideAfterOneSecondsWithCompletion:(void (^)(void))completion {
     
-    SKAction *moveBackAndFade = [SKAction group:@[[SKAction moveByX:0.0f y:-50 duration:0.1],
-                                                  [SKAction fadeOutWithDuration:0.1]]];
+    SKAction *moveBackAndFade = [SKAction group:@[[SKAction moveByX:0.0f y:-50 duration:0.4],
+                                                  [SKAction fadeOutWithDuration:0.4]]];
     
     SKAction *fadeOut = [SKAction sequence:@[moveBackAndFade,
                                              [SKAction runBlock:completion]]];
