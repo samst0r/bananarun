@@ -30,6 +30,12 @@
 
 @property NSTimeInterval timeOfLastMove;
 @property NSTimeInterval timePerMove;
+
+
+@property NSTimeInterval timeWithoutHittingABanana;
+@property (nonatomic) CGFloat highScore;
+@property (nonatomic) CGFloat topScore;
+
 @property BOOL gameEnding;
 
 @end
@@ -105,6 +111,8 @@
     [self addBanana];
     
     self.timePerMove = 1.0;
+    
+    self.timeWithoutHittingABanana = [NSDate date].timeIntervalSinceNow;
 }
 
 - (void)setupAndAddBackground {
@@ -244,7 +252,8 @@
     
     BananaObsticleSpriteNode *node = (BananaObsticleSpriteNode *)contact.bodyA.node;
     FootPrintSpriteNode *footPrint = (FootPrintSpriteNode *)contact.bodyB.node;
-
+    self.timeWithoutHittingABanana = 0.0;
+    
     if (footPrint.alpha == 1.0f) {
         
         node.size = CGSizeMake(100.0f, 100.0f);
@@ -257,25 +266,20 @@
         
             [self endGame];
         }];
-        
-        
     }
 }
 
 #pragma mark - Game Ending
 
 -(void)endGame {
-
-
     
-        
-        GameOverScene *gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
-        gameOverScene.topSpeed = self.topSpeed;
-        gameOverScene.highestAllTimeSpeed = self.highestAllTimeSpeed;
-        
-        [self.view presentScene:gameOverScene transition:[SKTransition doorsOpenHorizontalWithDuration:0.5]];
+    GameOverScene *gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
+    gameOverScene.topSpeed = self.topSpeed;
+    gameOverScene.highestAllTimeSpeed = self.highestAllTimeSpeed;
     
-        self.topSpeed = 0;
+    [self.view presentScene:gameOverScene transition:[SKTransition doorsOpenHorizontalWithDuration:0.5]];
+    
+    self.topSpeed = 0;
 }
 
 @end
