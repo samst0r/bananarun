@@ -30,6 +30,12 @@
 
 @property NSTimeInterval timeOfLastMove;
 @property NSTimeInterval timePerMove;
+
+
+@property NSTimeInterval timeWithoutHittingABanana;
+@property (nonatomic) CGFloat highScore;
+@property (nonatomic) CGFloat topScore;
+
 @property BOOL gameEnding;
 
 @end
@@ -105,6 +111,8 @@
     [self addBanana];
     
     self.timePerMove = 1.0;
+    
+    self.timeWithoutHittingABanana = [NSDate date].timeIntervalSinceNow;
 }
 
 - (void)setupAndAddBackground {
@@ -250,20 +258,26 @@
     
     if ([node isKindOfClass:[BananaObsticleSpriteNode class]]) {
         
-        node.size = CGSizeMake(150.0f, 150.0f);
-        self.movementSpeed = 0;
+        FootPrintSpriteNode *footPrint = (FootPrintSpriteNode *)contact.bodyB.node;
+        self.timeWithoutHittingABanana = 0.0;
         
-        [node hideAfterOneSecondsWithCompletion:^{
+        if (footPrint.alpha == 1.0f) {
             
-            [node removeFromParent];
+            node.size = CGSizeMake(150.0f, 150.0f);
+            self.movementSpeed = 0;
             
-            [self endGame];
-        }];
+            [node hideAfterOneSecondsWithCompletion:^{
+                
+                [node removeFromParent];
+                
+                [self endGame];
+            }];
+        }
     }
 }
 
 #pragma mark - Game Ending
-
+    
 - (void)endGame {
     
     GameOverScene *gameOverScene = [[GameOverScene alloc] initWithSize:self.size];

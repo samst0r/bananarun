@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		22550D4718DEEA5500168887 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22550D4618DEEA5500168887 /* GameOverScene.m */; };
 		22ACEFD118E0C264001869CA /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ACEFD018E0C264001869CA /* MenuScene.m */; };
+		2289F62418E35ED80035303F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289F62318E35ED80035303F /* GameKit.framework */; };
+		2289F62618E35EDD0035303F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289F62518E35EDD0035303F /* StoreKit.framework */; };
+		2289F62D18E370260035303F /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289F62C18E370260035303F /* GCHelper.m */; };
 		22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A418DDAF0A004BA14C /* Foundation.framework */; };
 		22DE33A718DDAF0A004BA14C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */; };
 		22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A818DDAF0A004BA14C /* UIKit.framework */; };
@@ -49,6 +52,10 @@
 		22550D4618DEEA5500168887 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		22ACEFCF18E0C264001869CA /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		22ACEFD018E0C264001869CA /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
+		2289F62318E35ED80035303F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		2289F62518E35EDD0035303F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2289F62B18E370260035303F /* GCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelper.h; sourceTree = "<group>"; };
+		2289F62C18E370260035303F /* GCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelper.m; sourceTree = "<group>"; };
 		22DE33A118DDAF0A004BA14C /* FingerRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FingerRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DE33A418DDAF0A004BA14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,7 +98,9 @@
 				22DE33A718DDAF0A004BA14C /* CoreGraphics.framework in Frameworks */,
 				22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */,
 				22DE33AB18DDAF0A004BA14C /* SpriteKit.framework in Frameworks */,
+				2289F62618E35EDD0035303F /* StoreKit.framework in Frameworks */,
 				22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */,
+				2289F62418E35ED80035303F /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +117,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2289F62A18E370260035303F /* GameCenter */ = {
+			isa = PBXGroup;
+			children = (
+				2289F62B18E370260035303F /* GCHelper.h */,
+				2289F62C18E370260035303F /* GCHelper.m */,
+			);
+			path = GameCenter;
+			sourceTree = "<group>";
+		};
 		22DE339818DDAF0A004BA14C = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +148,8 @@
 		22DE33A318DDAF0A004BA14C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2289F62518E35EDD0035303F /* StoreKit.framework */,
+				2289F62318E35ED80035303F /* GameKit.framework */,
 				22DE33A418DDAF0A004BA14C /* Foundation.framework */,
 				22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */,
 				22DE33A818DDAF0A004BA14C /* UIKit.framework */,
@@ -178,6 +198,7 @@
 		22DE33E318DDAFEF004BA14C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2289F62A18E370260035303F /* GameCenter */,
 				22DE33FE18DDB4BE004BA14C /* Scenes */,
 				22DE33FA18DDB44B004BA14C /* Nodes */,
 				22DE33E918DDAFFE004BA14C /* ViewControllers */,
@@ -303,6 +324,14 @@
 				TargetAttributes = {
 					22DE33A018DDAF0A004BA14C = {
 						DevelopmentTeam = RCHUN65RQ4;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					22DE33CB18DDAF0A004BA14C = {
 						TestTargetID = 22DE33A018DDAF0A004BA14C;
@@ -367,6 +396,7 @@
 				22DE33E718DDAFEF004BA14C /* AppDelegate.m in Sources */,
 				22DE33E818DDAFEF004BA14C /* main.m in Sources */,
 				22DE33F018DDAFFE004BA14C /* ViewController.m in Sources */,
+				2289F62D18E370260035303F /* GCHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
