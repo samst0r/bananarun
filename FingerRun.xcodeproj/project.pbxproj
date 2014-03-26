@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22550D4718DEEA5500168887 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22550D4618DEEA5500168887 /* GameOverScene.m */; };
+		22ACEFD118E0C264001869CA /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ACEFD018E0C264001869CA /* MenuScene.m */; };
 		22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A418DDAF0A004BA14C /* Foundation.framework */; };
 		22DE33A718DDAF0A004BA14C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */; };
 		22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A818DDAF0A004BA14C /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 /* Begin PBXFileReference section */
 		22550D4518DEEA5500168887 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		22550D4618DEEA5500168887 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		22ACEFCF18E0C264001869CA /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
+		22ACEFD018E0C264001869CA /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
 		22DE33A118DDAF0A004BA14C /* FingerRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FingerRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DE33A418DDAF0A004BA14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -178,7 +181,6 @@
 				22DE33FE18DDB4BE004BA14C /* Scenes */,
 				22DE33FA18DDB44B004BA14C /* Nodes */,
 				22DE33E918DDAFFE004BA14C /* ViewControllers */,
-				22DE33E418DDAFEF004BA14C /* AppDelegate.h */,
 				22DE33E518DDAFEF004BA14C /* AppDelegate.m */,
 				22DE33E618DDAFEF004BA14C /* main.m */,
 			);
@@ -208,6 +210,7 @@
 		22DE33FA18DDB44B004BA14C /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				22DE33E418DDAFEF004BA14C /* AppDelegate.h */,
 				22DE341E18DE36FE004BA14C /* CollisionCategories.h */,
 				22DE341A18DE2F62004BA14C /* Obsticles */,
 				22DE33FB18DDB4A4004BA14C /* BackgroundSpriteNode.h */,
@@ -227,6 +230,8 @@
 				22DE340018DDB4BE004BA14C /* GameScene.m */,
 				22550D4518DEEA5500168887 /* GameOverScene.h */,
 				22550D4618DEEA5500168887 /* GameOverScene.m */,
+				22ACEFCF18E0C264001869CA /* MenuScene.h */,
+				22ACEFD018E0C264001869CA /* MenuScene.m */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DE341D18DE2F7E004BA14C /* BananaObsticleSpriteNode.m in Sources */,
+				22ACEFD118E0C264001869CA /* MenuScene.m in Sources */,
 				22550D4718DEEA5500168887 /* GameOverScene.m in Sources */,
 				22DE340118DDB4BE004BA14C /* GameScene.m in Sources */,
 				22DE341918DDCC77004BA14C /* RoadMarkerSpriteNode.m in Sources */,

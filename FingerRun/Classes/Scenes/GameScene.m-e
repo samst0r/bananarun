@@ -57,7 +57,7 @@
     _topSpeedLabel.fontSize = 14.0f;
     _topSpeedLabel.text = @"";
     _topSpeedLabel.fontColor = [UIColor yellowColor];
-    _topSpeedLabel.alpha = 0.85f;
+    _topSpeedLabel.alpha = 1.0f;
     
     [self addChild:_topSpeedLabel];
 }
@@ -69,7 +69,7 @@
     _speedLabel.fontSize = 24.0f;
     _speedLabel.text = @"";
     _speedLabel.fontColor = [UIColor purpleColor];
-    _speedLabel.alpha = 0.85f;
+    _speedLabel.alpha = 1.0f;
     
     [self addChild:_speedLabel];
 }
@@ -149,7 +149,7 @@
     [self recordCurrentTopSpeed];
     [self recordHighestAllTimeSpeed];
     
-    if (self.children.count < 13) {
+    if (self.children.count <= 13) {
         
         [self addBanana];
     }
@@ -174,7 +174,8 @@
     
     if (self.roadMarkerNode.position.y <= 300) {
         
-        self.roadMarkerNode.position = CGPointMake(self.roadMarkerNode.position.x, CGRectGetHeight(self.frame) + self.roadMarkerNode.position.y + -30);
+        self.roadMarkerNode.position = CGPointMake(self.roadMarkerNode.position.x,
+                                                   CGRectGetHeight(self.frame) + self.roadMarkerNode.position.y + -30);
     }
 }
 
@@ -194,6 +195,7 @@
 }
 
 #pragma mark - User Tap Helpers
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [touches anyObject];
@@ -216,6 +218,7 @@
 }
 
 #pragma mark - HUD Helpers
+
 - (void)recordCurrentTopSpeed {
     
     if (self.movementSpeed >= self.topSpeed) {
@@ -240,42 +243,36 @@
 }
 
 #pragma mark - Physics Contact Helpers
+
 - (void)didBeginContact:(SKPhysicsContact *)contact {
     
     BananaObsticleSpriteNode *node = (BananaObsticleSpriteNode *)contact.bodyA.node;
-    FootPrintSpriteNode *footPrint = (FootPrintSpriteNode *)contact.bodyB.node;
-
-    if (footPrint.alpha == 1.0f) {
+    
+    if ([node isKindOfClass:[BananaObsticleSpriteNode class]]) {
         
-        node.size = CGSizeMake(100.0f, 100.0f);
-
+        node.size = CGSizeMake(150.0f, 150.0f);
         self.movementSpeed = 0;
         
         [node hideAfterOneSecondsWithCompletion:^{
             
             [node removeFromParent];
-        
+            
             [self endGame];
         }];
-        
-        
     }
 }
 
 #pragma mark - Game Ending
 
--(void)endGame {
-
-
+- (void)endGame {
     
-        
-        GameOverScene *gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
-        gameOverScene.topSpeed = self.topSpeed;
-        gameOverScene.highestAllTimeSpeed = self.highestAllTimeSpeed;
-        
-        [self.view presentScene:gameOverScene transition:[SKTransition doorsOpenHorizontalWithDuration:0.5]];
+    GameOverScene *gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
+    gameOverScene.topSpeed = self.topSpeed;
+    gameOverScene.highestAllTimeSpeed = self.highestAllTimeSpeed;
     
-        self.topSpeed = 0;
+    [self.view presentScene:gameOverScene transition:[SKTransition doorsOpenHorizontalWithDuration:0.25]];
+    
+    self.topSpeed = 0;
 }
 
 @end
