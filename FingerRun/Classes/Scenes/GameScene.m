@@ -15,6 +15,8 @@
 #import "RoadMarkerSpriteNode.h"
 #import "BananaObsticleSpriteNode.h"
 
+#import "SKLabelNode+DropShadow.h"
+
 @interface GameScene () <SKPhysicsContactDelegate>
 
 @property (nonatomic) BackgroundSpriteNode *background;
@@ -70,11 +72,12 @@
 
 - (void)setupAndAddSpeedLabel {
     
-    _speedLabel = [[SKLabelNode alloc] initWithFontNamed:@"ChalkboardSE-Bold"];
+    _speedLabel = [SKLabelNode makeDropShadowString:@""
+                                           fontSize:50.0f
+                                              color:[SKColor blackColor]
+                                        shadowColor:[SKColor yellowColor]];
+                   
     _speedLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame) - 80.0f);
-    _speedLabel.fontSize = 24.0f;
-    _speedLabel.text = @"";
-    _speedLabel.fontColor = [UIColor purpleColor];
     _speedLabel.alpha = 1.0f;
     
     [self addChild:_speedLabel];

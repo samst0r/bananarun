@@ -20,15 +20,6 @@
 
 @implementation GameOverScene
 
-- (void)addBanana {
-    
-    BananaObsticleSpriteNode *banana = [[BananaObsticleSpriteNode alloc] init];
-    banana.position = CGPointMake(arc4random_uniform(CGRectGetWidth(self.frame)), CGRectGetHeight(self.frame) + 50.0f);
-    
-    banana.physicsBody.affectedByGravity = YES;
-    [self addChild:banana];
-}
-
 - (void)didMoveToView:(SKView *)view {
     
     if (!self.contentCreated) {
@@ -120,6 +111,15 @@
     GameScene* gameScene = [[GameScene alloc] initWithSize:self.size];
     gameScene.scaleMode = SKSceneScaleModeAspectFill;
     [self.view presentScene:gameScene transition:[SKTransition doorsCloseHorizontalWithDuration:.25]];
+}
+
+- (void)addBanana {
+    
+    BananaObsticleSpriteNode *banana = [[BananaObsticleSpriteNode alloc] init];
+    banana.position = CGPointMake(arc4random_uniform(CGRectGetWidth(self.frame)), CGRectGetHeight(self.frame) + 50.0f);
+    
+    banana.physicsBody.affectedByGravity = YES;
+    [self addChild:banana];
 }
 
 - (void)moveBananaObsticles:(NSTimeInterval)currentTime {
