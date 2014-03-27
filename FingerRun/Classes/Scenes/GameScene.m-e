@@ -27,6 +27,8 @@
 @property (nonatomic) RoadMarkerSpriteNode *roadMarkerNode;
 @property (nonatomic) DropShadowLabelNode *scoreLabel;
 
+@property (nonatomic, getter=hasExtraLife) BOOL extraLife;
+
 @property (nonatomic) CGFloat topSpeed;
 
 // calculate speed
@@ -34,8 +36,6 @@
 @property NSDate *timeWithoutHittingABanana;
 
 @property NSTimeInterval timeOfLastMove;
-@property NSTimeInterval timePerMove;
-
 
 @property (nonatomic) CGFloat highScore;
 @property (nonatomic) CGFloat topScore;
@@ -43,6 +43,7 @@
 @property BOOL startTimer;
 
 @property BOOL gameEnding;
+@property BOOL pausedGame;
 
 @end
 
@@ -63,11 +64,7 @@
 
 - (void)addScoreLabel {
     
-    NSInteger score = [ScoreCalculator sharedInstance].score.integerValue;
-    
-    if (score < 1) {
-        score = 0;
-    }
+    NSInteger score = [ScoreCalculator sharedInstance].score;
     
     NSString *scoreString = [NSString stringWithFormat:@"%07ld", score];
     
@@ -100,7 +97,8 @@
     [ScoreCalculator sharedInstance].score = 0;
     
     self.startTimer = YES;
-    self.timePerMove = 1.0;
+    self.gameEnding = NO;
+    self.pausedGame = NO;
 }
 
 - (void)setupAndAddBackground {
@@ -151,27 +149,24 @@
 
 - (void)update:(NSTimeInterval)currentTime {
     
-    [self moveRoadMarker];
-    [self moveBananaObsticles:currentTime];
+    if (self.gameEnding) return;
     
-    if (self.children.count <= 13) {
+    if (self.pausedGame) {
         
-        [self addBanana];
+    } else {
+    
+        [self moveRoadMarker];
+        [self moveBananaObsticles:currentTime];
+        
+        if (self.children.count <= 13) {
+            
+            [self addBanana];
+        }
+        
+        NSInteger score = [ScoreCalculator sharedInstance].score;
+        
+        self.scoreLabel.text = [NSString stringWithFormat:@"%07ld", score];
     }
-    
-    NSTimeInterval timeWithoutSlipping = [[NSDate date] timeIntervalSinceDate:self.timeWithoutHittingABanana];
-    
-    [ScoreCalculator sharedInstance].score = [ScoreCalculator calculateScoreWithSpeed:self.movementSpeed
-                                                                                 time:timeWithoutSlipping];
-    
-    NSInteger score = [ScoreCalculator sharedInstance].score.integerValue;
-    
-    if (score < 1) {
-        score = 0;
-    }
-    self.scoreLabel.text = [NSString stringWithFormat:@"%07ld", score];
-//    [self decreaseSpeed:currentTime];
-    
 }
 
 #pragma mark - Scene Update Helpers
@@ -206,35 +201,137 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    if (self.startTimer) {
-     
-        self.timeWithoutHittingABanana = [NSDate date];
-        self.startTimer = NO;
-    }
-    
-    self.timeOfLastMove = event.timestamp;
-    
     UITouch *touch = [touches anyObject];
-    CGPoint positionInScene = [touch locationInNode:self];
-    
-    FootPrintSpriteNode *footprint = [[FootPrintSpriteNode alloc] init];
-    footprint.position = positionInScene;
-    
-    [footprint hideAfterOneSecondsWithCompletion:^{
+    CGPoint location = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:location];
+
+    if (self.pausedGame) {
         
-        [self removeChildrenInArray:@[footprint]];
+        if ([node.name isEqualToString:@"purchaseButton"] ||
+            [node.name isEqualToString:@"purchaseLabel"] ||
+            [node.name isEqualToString:@"extraLifeLabel"]) {
+            
+            NSLog(@"Touched");
+        } else {
+            
+            NSLog(@"Continue");
+            [self endGame];
+        }
+    } else {
+    
+        if (self.startTimer) {
+            
+            self.timeWithoutHittingABanana = [NSDate date];
+            self.startTimer = NO;
+        }
         
-    }];
-    
-    [self addChild:footprint];
-    
-    self.movementSpeed++;
-    
+        self.timeOfLastMove = event.timestamp;
+        
+        FootPrintSpriteNode *footprint = [[FootPrintSpriteNode alloc] init];
+        footprint.position = location;
+        
+        [footprint hideAfterOneSecondsWithCompletion:^{
+            
+            [self removeChildrenInArray:@[footprint]];
+            
+        }];
+        
+        [self addChild:footprint];
+        [ScoreCalculator sharedInstance].score += [ScoreCalculator calculateScore:self.movementSpeed];
+        
+        self.movementSpeed++;
+    }
 }
 
 #pragma mark - HUD Helpers
 
+- (SKSpriteNode *)purchaseExtraLife {
+    
+    SKSpriteNode *fireNode = [SKSpriteNode spriteNodeWithColor:[UIColor yellowColor] size:CGSizeMake(190, 110)];
+    
+    fireNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) - 10);
+    fireNode.name = @"purchaseButton";
+    fireNode.zPosition = 1.0f;
+    
+    DropShadowLabelNode *purchaseLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:@"PURCHASE"
+                                                                                          fontSize:30.0f
+                                                                                             color:[SKColor blackColor]
+                                                                                       shadowColor:[SKColor yellowColor]];
+    
+    DropShadowLabelNode *extraLifeLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:@"EXTRA LIFE?"
+                                                                                          fontSize:30.0f
+                                                                                             color:[SKColor blackColor]
+                                                                                       shadowColor:[SKColor yellowColor]];
+    
+    purchaseLabel.position = CGPointMake(0.0f, 0.0f);
+    purchaseLabel.name = @"purchaseLabel";
+    
+    extraLifeLabel.position = CGPointMake(0.0f, -30.0f);
+    extraLifeLabel.name = @"extraLifeLabel";
+    extraLifeLabel.zPosition = 0.0f;
+    
+    purchaseLabel.zPosition = 0.0f;
+    
+    [fireNode addChild:purchaseLabel];
+    [purchaseLabel addChild:extraLifeLabel];
+    
+    return fireNode;
+}
+
+- (void)addContinueWithoutExtraLifeSignPosting {
+    
+    DropShadowLabelNode *purchaseExtraLife = [[DropShadowLabelNode alloc] initWithDropShadowString:@"TAP TO END"
+                                                                                          fontSize:30.0f
+                                                                                             color:[SKColor whiteColor]
+                                                                                       shadowColor:[SKColor blackColor]];
+    
+    purchaseExtraLife.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) - 110.0f);
+    purchaseExtraLife.zPosition = 1.0;
+    [self addChild:purchaseExtraLife];
+}
+
+- (void)addTooBad {
+    
+    DropShadowLabelNode *purchaseExtraLife = [[DropShadowLabelNode alloc] initWithDropShadowString:@"TOO BAD!"
+                                                                                          fontSize:30.0f
+                                                                                             color:[SKColor whiteColor]
+                                                                                       shadowColor:[SKColor blackColor]];
+    
+    purchaseExtraLife.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) + 65.0f);
+    purchaseExtraLife.zPosition = 1.0;
+    [self addChild:purchaseExtraLife];
+}
+
+
+
 #pragma mark - Physics Contact Helpers
+
+- (void)endGame:(BananaObsticleSpriteNode *)node {
+    
+    [ScoreCalculator sharedInstance].gameOverScore = [ScoreCalculator sharedInstance].score;
+    
+    if ([ScoreCalculator sharedInstance].gameOverScore > [ScoreCalculator sharedInstance].highestScore) {
+        
+        [ScoreCalculator sharedInstance].highestScore = [ScoreCalculator sharedInstance].gameOverScore;
+    }
+    
+    node.size = CGSizeMake(150.0f, 150.0f);
+    self.movementSpeed = 0;
+    self.timeWithoutHittingABanana = [NSDate date];
+    [node hideAfterOneSecondsWithCompletion:^{
+        
+        [node removeFromParent];
+        
+        [self endGame];
+    }];
+}
+
+- (void)purchaseAnotherLifeOffer {
+    
+    [self addChild:[self purchaseExtraLife]];
+    [self addContinueWithoutExtraLifeSignPosting];
+    [self addTooBad];
+}
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
     
@@ -246,29 +343,27 @@
 
         
         if (footPrint.alpha == 1.0f) {
+
+            self.pausedGame = YES;
+
+            [self purchaseAnotherLifeOffer];
             
-            [ScoreCalculator sharedInstance].gameOverScore = [ScoreCalculator sharedInstance].score;
             
-            if ([ScoreCalculator sharedInstance].gameOverScore > [ScoreCalculator sharedInstance].highestScore) {
+            if (!self.hasExtraLife && !self.pausedGame) {
                 
-                [ScoreCalculator sharedInstance].highestScore = [ScoreCalculator sharedInstance].gameOverScore;
+                self.gameEnding = YES;
+                [self endGame:node];
+            } else {
                 
-                GKScore *score = [[GKScore alloc] initWithLeaderboardIdentifier:@"highscore"];
-                score.value = [ScoreCalculator sharedInstance].highestScore.integerValue;
-                [GKScore reportScores:@[score] withCompletionHandler:^(NSError *error) {
+                self.background.alpha = 0.1f;
+                self.roadMarkerNode.alpha = 0.1f;
+                self.scoreLabel.alpha = 0.1f;
+                
+                [node hideAfterOneSecondsWithCompletion:^{
                     
+                    [node removeFromParent];
                 }];
             }
-            
-            node.size = CGSizeMake(150.0f, 150.0f);
-            self.movementSpeed = 0;
-            self.timeWithoutHittingABanana = [NSDate date];
-            [node hideAfterOneSecondsWithCompletion:^{
-                
-                [node removeFromParent];
-                
-                [self endGame];
-            }];
         }
     }
 }
@@ -276,6 +371,16 @@
 #pragma mark - Game Ending
     
 - (void)endGame {
+    
+    [ScoreCalculator sharedInstance].gameOverScore = [ScoreCalculator sharedInstance].score;
+    
+    if ([ScoreCalculator sharedInstance].gameOverScore > [ScoreCalculator sharedInstance].highestScore) {
+        
+        [ScoreCalculator sharedInstance].highestScore = [ScoreCalculator sharedInstance].gameOverScore;
+    }
+    
+    self.movementSpeed = 0;
+    self.timeWithoutHittingABanana = [NSDate date];
     
     GameOverScene *gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
     gameOverScene.topSpeed = self.topSpeed;
@@ -286,3 +391,4 @@
 }
 
 @end
+

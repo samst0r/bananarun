@@ -13,8 +13,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[GCHelper sharedInstance] authenticateLocalUser];
-    
     return YES;
 }
 

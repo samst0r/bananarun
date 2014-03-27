@@ -26,8 +26,8 @@
     
     self.size = CGSizeMake(100, 100);
     self.name = @"Banana";
-    self.xScale = 0.5f;
-    self.yScale = 0.5f;
+    self.xScale = 0.7f;
+    self.yScale = 0.7f;
     self.texture = [SKTexture textureWithImageNamed:@"pixelbanana"];
     self.texture.filteringMode = SKTextureFilteringNearest;
     
