@@ -372,6 +372,16 @@
     
 - (void)endGame {
     
+    [ScoreCalculator sharedInstance].gameOverScore = [ScoreCalculator sharedInstance].score;
+    
+    if ([ScoreCalculator sharedInstance].gameOverScore > [ScoreCalculator sharedInstance].highestScore) {
+        
+        [ScoreCalculator sharedInstance].highestScore = [ScoreCalculator sharedInstance].gameOverScore;
+    }
+    
+    self.movementSpeed = 0;
+    self.timeWithoutHittingABanana = [NSDate date];
+    
     GameOverScene *gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
     gameOverScene.topSpeed = self.topSpeed;
     
