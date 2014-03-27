@@ -17,6 +17,7 @@
 		2289F63A18E392C00035303F /* ScoreCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289F63918E392C00035303F /* ScoreCalculator.m */; };
 		2289F63D18E3A8800035303F /* DropShadowLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289F63C18E3A8800035303F /* DropShadowLabelNode.m */; };
 		22ACEFD118E0C264001869CA /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ACEFD018E0C264001869CA /* MenuScene.m */; };
+		22D2EF5E18E4DCE9002ECA89 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D2EF5D18E4DCE9002ECA89 /* Crashlytics.framework */; };
 		22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A418DDAF0A004BA14C /* Foundation.framework */; };
 		22DE33A718DDAF0A004BA14C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */; };
 		22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A818DDAF0A004BA14C /* UIKit.framework */; };
@@ -69,6 +70,7 @@
 		2289F63C18E3A8800035303F /* DropShadowLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropShadowLabelNode.m; path = SpriteNodes/DropShadowLabelNode.m; sourceTree = "<group>"; };
 		22ACEFCF18E0C264001869CA /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		22ACEFD018E0C264001869CA /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
+		22D2EF5D18E4DCE9002ECA89 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		22DE33A118DDAF0A004BA14C /* Banana Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banana Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DE33A418DDAF0A004BA14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +114,7 @@
 				2289F62618E35EDD0035303F /* StoreKit.framework in Frameworks */,
 				22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */,
 				2289F62418E35ED80035303F /* GameKit.framework in Frameworks */,
+				22D2EF5E18E4DCE9002ECA89 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +182,7 @@
 		22DE33A318DDAF0A004BA14C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22D2EF5D18E4DCE9002ECA89 /* Crashlytics.framework */,
 				2289F62518E35EDD0035303F /* StoreKit.framework */,
 				2289F62318E35ED80035303F /* GameKit.framework */,
 				22DE33A418DDAF0A004BA14C /* Foundation.framework */,
@@ -320,6 +324,7 @@
 				22DE339D18DDAF0A004BA14C /* Sources */,
 				22DE339E18DDAF0A004BA14C /* Frameworks */,
 				22DE339F18DDAF0A004BA14C /* Resources */,
+				22D2EF5C18E4DCC5002ECA89 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -416,6 +421,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22D2EF5C18E4DCC5002ECA89 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 437973c79408288d15efb4a888494667425c729c cfb932823b29e302c24ca96b34982f5afb3d52f26d45a0909439272c67d4d9bf";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22DE339D18DDAF0A004BA14C /* Sources */ = {
@@ -558,6 +580,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sam/Desktop/Repos/BananaRun,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FingerRun/Resources/Banana Run-Prefix.pch";
 				INFOPLIST_FILE = "FingerRun/Resources/Banana Run-Info.plist";
@@ -575,6 +601,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sam/Desktop/Repos/BananaRun,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FingerRun/Resources/Banana Run-Prefix.pch";
 				INFOPLIST_FILE = "FingerRun/Resources/Banana Run-Info.plist";

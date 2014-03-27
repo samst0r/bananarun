@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FingerRun/Classes/Scenes/GameScene.m"
-            timestampString = "417651480.148473"
+            timestampString = "417651984.344489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
             landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FingerRun/Classes/Scenes/GameScene.m"
-            timestampString = "417651480.148473"
+            timestampString = "417651984.344489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
             landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FingerRun/Classes/Scenes/GameScene.m"
-            timestampString = "417650917.344777"
+            timestampString = "417651984.344489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "-productsRequest:didReceiveResponse:"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FingerRun/Classes/Scenes/GameScene.m"
-            timestampString = "417650917.344777"
+            timestampString = "417651984.344489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "-paymentQueue:updatedTransactions:"
             landmarkType = "5">
             <Locations>
@@ -115,11 +115,11 @@
                   symbolName = "-[GameScene paymentQueue:updatedTransactions:]"
                   moduleName = "Banana Run"
                   urlString = "file:///Users/sam/Desktop/Repos/BananaRun/FingerRun/Classes/Scenes/GameScene.m"
-                  timestampString = "417651065.589657"
+                  timestampString = "417652243.153875"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "258"
-                  endingLineNumber = "258"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
                   offsetFromSymbolStart = "108">
                </Location>
                <Location
@@ -129,12 +129,12 @@
                   symbolName = "-[GameScene paymentQueue:updatedTransactions:]"
                   moduleName = "Banana Run"
                   urlString = "file:///Users/sam/Desktop/Repos/BananaRun/FingerRun/Classes/Scenes/GameScene.m"
-                  timestampString = "417651065.589884"
+                  timestampString = "417652243.154335"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "258"
-                  endingLineNumber = "258"
-                  offsetFromSymbolStart = "640">
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "676">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -146,11 +146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FingerRun/Classes/Scenes/GameScene.m"
-            timestampString = "417650987.597596"
+            timestampString = "417651984.344489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "-purchaseExtraLife"
             landmarkType = "5">
          </BreakpointContent>

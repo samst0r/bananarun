@@ -9,9 +9,13 @@
 #import "AppDelegate.h"
 #import "GCHelper.h"
 
+#import <Crashlytics/Crashlytics.h>
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [Crashlytics startWithAPIKey:@"crashlytics-password"];
     
     return YES;
 }
