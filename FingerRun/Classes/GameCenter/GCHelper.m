@@ -64,7 +64,6 @@ static GCHelper *sharedHelper = nil;
     
     [GKLocalPlayer localPlayer].authenticateHandler = ^(UIViewController *viewController, NSError *error){
         
-        NSLog(<#NSString *format, ...#>)
     };
     
     NSLog(@"Authenticating local user...");

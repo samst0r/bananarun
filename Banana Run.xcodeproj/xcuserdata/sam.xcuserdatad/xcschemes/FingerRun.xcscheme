@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22DE33A018DDAF0A004BA14C"
-               BuildableName = "FingerRun.app"
+               BuildableName = "Banana Run.app"
                BlueprintName = "Banana Run"
                ReferencedContainer = "container:Banana Run.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22DE33CB18DDAF0A004BA14C"
-               BuildableName = "FingerRunTests.xctest"
+               BuildableName = "Banana RunTests.xctest"
                BlueprintName = "Banana RunTests"
                ReferencedContainer = "container:Banana Run.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22DE33A018DDAF0A004BA14C"
-            BuildableName = "FingerRun.app"
+            BuildableName = "Banana Run.app"
             BlueprintName = "Banana Run"
             ReferencedContainer = "container:Banana Run.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22DE33A018DDAF0A004BA14C"
-            BuildableName = "FingerRun.app"
+            BuildableName = "Banana Run.app"
             BlueprintName = "Banana Run"
             ReferencedContainer = "container:Banana Run.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22DE33A018DDAF0A004BA14C"
-            BuildableName = "FingerRun.app"
+            BuildableName = "Banana Run.app"
             BlueprintName = "Banana Run"
             ReferencedContainer = "container:Banana Run.xcodeproj">
          </BuildableReference>
