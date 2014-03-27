@@ -25,11 +25,12 @@
 - (void)setup {
     
     self.color = [UIColor yellowColor];
-    self.size = CGSizeMake(100, 100);
+    self.size = CGSizeMake(72, 72);
     self.name = @"Banana";
     self.xScale = 0.5f;
     self.yScale = 0.5f;
-    self.texture = [SKTexture textureWithImageNamed:@"banana"];
+    self.texture = [SKTexture textureWithImageNamed:@"pixelbanana"];
+    self.texture.filteringMode = SKTextureFilteringNearest;
     
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
     self.physicsBody.dynamic = YES;

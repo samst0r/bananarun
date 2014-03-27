@@ -16,27 +16,31 @@
 #import "BananaObsticleSpriteNode.h"
 
 #import "SKLabelNode+DropShadow.h"
+#import "DropShadowLabelNode.h"
+#import "ScoreCalculator.h"
+
+@import GameKit;
 
 @interface GameScene () <SKPhysicsContactDelegate>
 
 @property (nonatomic) BackgroundSpriteNode *background;
 @property (nonatomic) RoadMarkerSpriteNode *roadMarkerNode;
-
-@property (nonatomic) SKLabelNode *speedLabel;
-@property (nonatomic) SKLabelNode *topSpeedLabel;
-@property (nonatomic) SKLabelNode *highestAllTimeSpeedLabel;
+@property (nonatomic) DropShadowLabelNode *scoreLabel;
 
 @property (nonatomic) CGFloat topSpeed;
-@property (nonatomic) CGFloat highestAllTimeSpeed;
+
+// calculate speed
 @property (nonatomic) CGFloat movementSpeed;
+@property NSDate *timeWithoutHittingABanana;
 
 @property NSTimeInterval timeOfLastMove;
 @property NSTimeInterval timePerMove;
 
 
-@property NSTimeInterval timeWithoutHittingABanana;
 @property (nonatomic) CGFloat highScore;
 @property (nonatomic) CGFloat topScore;
+
+@property BOOL startTimer;
 
 @property BOOL gameEnding;
 
@@ -45,44 +49,6 @@
 @implementation GameScene
 
 #pragma mark - Initialisation
-
-- (void)setupAndAddHighestSpeedLabel {
-    
-    _highestAllTimeSpeedLabel = [[SKLabelNode alloc] initWithFontNamed:@"ChalkboardSE-Bold"];
-    _highestAllTimeSpeedLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame) - 40.0f);
-    _highestAllTimeSpeedLabel.fontSize = 14.0f;
-    _highestAllTimeSpeedLabel.text = @"";
-    _highestAllTimeSpeedLabel.fontColor = [UIColor greenColor];
-    _highestAllTimeSpeedLabel.alpha = 0.85f;
-    
-    [self addChild:_highestAllTimeSpeedLabel];
-}
-
-- (void)setupAndAddTopSpeedLabel {
-    
-    _topSpeedLabel = [[SKLabelNode alloc] initWithFontNamed:@"ChalkboardSE-Bold"];
-    _topSpeedLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame) - 50.0f);
-    _topSpeedLabel.fontSize = 14.0f;
-    _topSpeedLabel.text = @"";
-    _topSpeedLabel.fontColor = [UIColor yellowColor];
-    _topSpeedLabel.alpha = 1.0f;
-    
-    [self addChild:_topSpeedLabel];
-}
-
-- (void)setupAndAddSpeedLabel {
-    
-    _speedLabel = [SKLabelNode makeDropShadowString:@""
-                                           fontSize:50.0f
-                                              color:[SKColor blackColor]
-                                        shadowColor:[SKColor yellowColor]];
-                   
-    _speedLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetHeight(self.frame) - 80.0f);
-    _speedLabel.alpha = 1.0f;
-    
-    [self addChild:_speedLabel];
-}
-
 
 - (id)initWithSize:(CGSize)size {
     
@@ -95,6 +61,25 @@
     return self;
 }
 
+- (void)addScoreLabel {
+    
+    NSInteger score = [ScoreCalculator sharedInstance].score.integerValue;
+    
+    if (score < 1) {
+        score = 0;
+    }
+    
+    NSString *scoreString = [NSString stringWithFormat:@"%07ld", score];
+    
+    self.scoreLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:scoreString
+                                                                   fontSize:30.0f
+                                                                      color:[SKColor blackColor]
+                                                                shadowColor:[SKColor yellowColor]];
+    
+    self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.size.height - 50.0f);
+    [self addChild:self.scoreLabel];
+}
+
 - (void)addBanana {
     
     BananaObsticleSpriteNode *banana = [[BananaObsticleSpriteNode alloc] init];
@@ -102,20 +87,20 @@
     [self addChild:banana];
 }
 
-- (void) didMoveToView:(SKView *)view {
+- (void)didMoveToView:(SKView *)view {
  
     [self setupAndAddBackground];
     [self setupAndAddRoadMarker];
-    [self setupAndAddSpeedLabel];
-    [self setupAndAddTopSpeedLabel];
+    [self addScoreLabel];
     
     self.physicsWorld.contactDelegate = self;
 
     [self addBanana];
     
-    self.timePerMove = 1.0;
+    [ScoreCalculator sharedInstance].score = 0;
     
-    self.timeWithoutHittingABanana = [NSDate date].timeIntervalSinceNow;
+    self.startTimer = YES;
+    self.timePerMove = 1.0;
 }
 
 - (void)setupAndAddBackground {
@@ -151,29 +136,41 @@
 }
 
 #pragma mark - Scene Update
-- (void)update:(NSTimeInterval)currentTime {
-    
-    [self moveRoadMarker];
-    [self moveBananaObsticles:currentTime];
-    
-    [self recordSpeed];
-    [self recordCurrentTopSpeed];
-    [self recordHighestAllTimeSpeed];
-    
-    if (self.children.count <= 13) {
-        
-        [self addBanana];
-    }
+- (void)decreaseSpeed:(NSTimeInterval)currentTime {
     
     if ((currentTime - self.timeOfLastMove > 0.00001) && self.movementSpeed > 0) {
         
         if (self.movementSpeed - 0.0001 < 0.00001) {
             self.movementSpeed = 0;
         } else {
-            self.movementSpeed -= 0.01;
+            self.movementSpeed -= 0.07;
         }
         self.timeOfLastMove = currentTime;
     }
+}
+
+- (void)update:(NSTimeInterval)currentTime {
+    
+    [self moveRoadMarker];
+    [self moveBananaObsticles:currentTime];
+    
+    if (self.children.count <= 13) {
+        
+        [self addBanana];
+    }
+    
+    NSTimeInterval timeWithoutSlipping = [[NSDate date] timeIntervalSinceDate:self.timeWithoutHittingABanana];
+    
+    [ScoreCalculator sharedInstance].score = [ScoreCalculator calculateScoreWithSpeed:self.movementSpeed
+                                                                                 time:timeWithoutSlipping];
+    
+    NSInteger score = [ScoreCalculator sharedInstance].score.integerValue;
+    
+    if (score < 1) {
+        score = 0;
+    }
+    self.scoreLabel.text = [NSString stringWithFormat:@"%07ld", score];
+    [self decreaseSpeed:currentTime];
     
 }
 
@@ -209,6 +206,14 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
+    if (self.startTimer) {
+     
+        self.timeWithoutHittingABanana = [NSDate date];
+        self.startTimer = NO;
+    }
+    
+    self.timeOfLastMove = event.timestamp;
+    
     UITouch *touch = [touches anyObject];
     CGPoint positionInScene = [touch locationInNode:self];
     
@@ -225,33 +230,9 @@
     
     self.movementSpeed++;
     
-    self.timeOfLastMove = event.timestamp;
 }
 
 #pragma mark - HUD Helpers
-
-- (void)recordCurrentTopSpeed {
-    
-    if (self.movementSpeed >= self.topSpeed) {
-        
-        self.topSpeed = self.movementSpeed;
-        self.topSpeedLabel.text = [NSString stringWithFormat:@"%.02f MPH", self.topSpeed];
-    }
-}
-
-- (void)recordHighestAllTimeSpeed {
-    
-    if (self.topSpeed >= self.highestAllTimeSpeed) {
-        
-        self.highestAllTimeSpeed = self.topSpeed;
-        self.highestAllTimeSpeedLabel.text = [NSString stringWithFormat:@"%.02f MPH (All Time)", self.highestAllTimeSpeed];
-    }
-}
-
-- (void)recordSpeed {
-    
-    self.speedLabel.text = [NSString stringWithFormat:@"%.02f MPH", self.movementSpeed];
-}
 
 #pragma mark - Physics Contact Helpers
 
@@ -262,13 +243,26 @@
     if ([node isKindOfClass:[BananaObsticleSpriteNode class]]) {
         
         FootPrintSpriteNode *footPrint = (FootPrintSpriteNode *)contact.bodyB.node;
-        self.timeWithoutHittingABanana = 0.0;
+
         
         if (footPrint.alpha == 1.0f) {
             
+            [ScoreCalculator sharedInstance].gameOverScore = [ScoreCalculator sharedInstance].score;
+            
+            if ([ScoreCalculator sharedInstance].gameOverScore > [ScoreCalculator sharedInstance].highestScore) {
+                
+                [ScoreCalculator sharedInstance].highestScore = [ScoreCalculator sharedInstance].gameOverScore;
+                
+                GKScore *score = [[GKScore alloc] initWithLeaderboardIdentifier:@"highscore"];
+                score.value = [ScoreCalculator sharedInstance].highestScore.integerValue;
+                [GKScore reportScores:@[score] withCompletionHandler:^(NSError *error) {
+                    
+                }];
+            }
+            
             node.size = CGSizeMake(150.0f, 150.0f);
             self.movementSpeed = 0;
-            
+            self.timeWithoutHittingABanana = [NSDate date];
             [node hideAfterOneSecondsWithCompletion:^{
                 
                 [node removeFromParent];
@@ -285,7 +279,6 @@
     
     GameOverScene *gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
     gameOverScene.topSpeed = self.topSpeed;
-    gameOverScene.highestAllTimeSpeed = self.highestAllTimeSpeed;
     
     [self.view presentScene:gameOverScene transition:[SKTransition doorsOpenHorizontalWithDuration:0.25]];
     

@@ -9,6 +9,9 @@
 #import "GameOverScene.h"
 #import "GameScene.h"
 #import "BananaObsticleSpriteNode.h"
+#import "SKLabelNode+DropShadow.h"
+#import "ScoreCalculator.h"
+#import "DropShadowLabelNode.h"
 
 @interface GameOverScene ()
 
@@ -32,22 +35,61 @@
 
 - (void)setupAndAddGameOverLabel {
     
-    SKLabelNode *gameOverLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier"];
-    gameOverLabel.fontSize = 36;
-    gameOverLabel.fontColor = [SKColor whiteColor];
-    gameOverLabel.text = @"Game Over!";
-    gameOverLabel.position = CGPointMake(self.size.width/2, 2.0 / 3.5 * self.size.height);
+    SKLabelNode *gameOverLabel = [SKLabelNode makeDropShadowString:@"GAME OVER"
+                                                          fontSize:50.0f
+                                                             color:[SKColor blackColor]
+                                                       shadowColor:[SKColor yellowColor]];
+    gameOverLabel.text = @"GAME OVER";
+    gameOverLabel.position = CGPointMake(self.size.width/2, self.size.height / 2 + 10);
     [self addChild:gameOverLabel];
 }
 
 - (void)setupAndAddTapLabel {
     
-    SKLabelNode *tapLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier"];
-    tapLabel.fontSize = 18;
-    tapLabel.fontColor = [SKColor whiteColor];
-    tapLabel.text = @"(Tap to Play Again)";
-    tapLabel.position = CGPointMake(CGRectGetMidX(self.frame), 2.0 / 3.5 * self.size.height - 30.0f);
+    SKLabelNode *tapLabel = [SKLabelNode makeDropShadowString:@"TAP TO PLAY AGAIN"
+                                                     fontSize:20.0f
+                                                        color:[SKColor yellowColor]
+                                                  shadowColor:[SKColor blackColor]];
+    tapLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.size.height / 2 - 100.0f);
     [self addChild:tapLabel];
+}
+
+- (void)addScoreLabel {
+    
+    NSString *scoreString = [NSString stringWithFormat:@"%07ld", [ScoreCalculator sharedInstance].gameOverScore.integerValue];
+    
+    DropShadowLabelNode *scoreLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:scoreString
+                                                                   fontSize:40.0f
+                                                                      color:[SKColor whiteColor]
+                                                                shadowColor:[SKColor blackColor]];
+
+    
+    scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.size.height / 2 + 70.0f);
+    
+    [self addChild:scoreLabel];
+}
+
+- (void)addHighestScoreLabel {
+    
+    NSString *scoreString = [NSString stringWithFormat:@"%07ld", [ScoreCalculator sharedInstance].highestScore.integerValue];
+    
+    DropShadowLabelNode *highestScoreLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:@"HIGHEST"
+                                                                                  fontSize:30.0f
+                                                                                     color:[SKColor whiteColor]
+                                                                               shadowColor:[SKColor blackColor]];
+    
+    DropShadowLabelNode *highestScore = [[DropShadowLabelNode alloc] initWithDropShadowString:scoreString
+                                                                                   fontSize:30.0f
+                                                                                      color:[SKColor blackColor]
+                                                                                shadowColor:[SKColor yellowColor]];
+    
+    
+    highestScoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.size.height / 2 + 230.0f);
+    highestScore.position = CGPointMake(CGRectGetMidX(self.frame), self.size.height / 2 + 200.0f);
+    
+    
+    [self addChild:highestScoreLabel];
+    [self addChild:highestScore];
 }
 
 - (void)createContent {
@@ -63,32 +105,8 @@
     [self setupAndAddGameOverLabel];
     [self setupAndAddTapLabel];
     
-    [self setupAndAddHighestSpeedLabel];
-    [self setupAndAddTopSpeedLabel];
-}
-
-- (void)setupAndAddHighestSpeedLabel {
-    
-    _highestAllTimeSpeedLabel = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
-    _highestAllTimeSpeedLabel.position = CGPointMake(CGRectGetMidX(self.frame), 2.0 / 3.5 * self.size.height - 100.0f);
-    _highestAllTimeSpeedLabel.fontSize = 16.0f;
-    _highestAllTimeSpeedLabel.text = [NSString stringWithFormat:@"%.02f MPH (All Time)", self.highestAllTimeSpeed];
-    _highestAllTimeSpeedLabel.fontColor = [UIColor greenColor];
-    _highestAllTimeSpeedLabel.alpha = 0.85f;
-    
-    [self addChild:_highestAllTimeSpeedLabel];
-}
-
-- (void)setupAndAddTopSpeedLabel {
-    
-    _topSpeedLabel = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
-    _topSpeedLabel.position = CGPointMake(CGRectGetMidX(self.frame), 2.0 / 3.5 * self.size.height - 130.0f);
-    _topSpeedLabel.fontSize = 16.0f;
-    _topSpeedLabel.text = [NSString stringWithFormat:@"%.02f MPH (Top Speed)", self.topSpeed];
-    _topSpeedLabel.fontColor = [UIColor yellowColor];
-    _topSpeedLabel.alpha = 0.85f;
-    
-    [self addChild:_topSpeedLabel];
+    [self addScoreLabel];
+    [self addHighestScoreLabel];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

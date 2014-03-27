@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22DE33A018DDAF0A004BA14C"
                BuildableName = "FingerRun.app"
-               BlueprintName = "FingerRun"
-               ReferencedContainer = "container:FingerRun.xcodeproj">
+               BlueprintName = "Banana Run"
+               ReferencedContainer = "container:Banana Run.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22DE33CB18DDAF0A004BA14C"
                BuildableName = "FingerRunTests.xctest"
-               BlueprintName = "FingerRunTests"
-               ReferencedContainer = "container:FingerRun.xcodeproj">
+               BlueprintName = "Banana RunTests"
+               ReferencedContainer = "container:Banana Run.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22DE33A018DDAF0A004BA14C"
             BuildableName = "FingerRun.app"
-            BlueprintName = "FingerRun"
-            ReferencedContainer = "container:FingerRun.xcodeproj">
+            BlueprintName = "Banana Run"
+            ReferencedContainer = "container:Banana Run.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22DE33A018DDAF0A004BA14C"
             BuildableName = "FingerRun.app"
-            BlueprintName = "FingerRun"
-            ReferencedContainer = "container:FingerRun.xcodeproj">
+            BlueprintName = "Banana Run"
+            ReferencedContainer = "container:Banana Run.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22DE33A018DDAF0A004BA14C"
             BuildableName = "FingerRun.app"
-            BlueprintName = "FingerRun"
-            ReferencedContainer = "container:FingerRun.xcodeproj">
+            BlueprintName = "Banana Run"
+            ReferencedContainer = "container:Banana Run.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
