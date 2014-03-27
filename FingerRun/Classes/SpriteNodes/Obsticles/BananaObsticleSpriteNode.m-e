@@ -24,8 +24,7 @@
 
 - (void)setup {
     
-    self.color = [UIColor yellowColor];
-    self.size = CGSizeMake(72, 72);
+    self.size = CGSizeMake(100, 100);
     self.name = @"Banana";
     self.xScale = 0.5f;
     self.yScale = 0.5f;

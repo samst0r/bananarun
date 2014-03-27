@@ -74,7 +74,7 @@
     self.scoreLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:scoreString
                                                                    fontSize:30.0f
                                                                       color:[SKColor blackColor]
-                                                                shadowColor:[SKColor yellowColor]];
+                                                                shadowColor:[SKColor whiteColor]];
     
     self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.size.height - 50.0f);
     [self addChild:self.scoreLabel];
@@ -170,7 +170,7 @@
         score = 0;
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"%07ld", score];
-    [self decreaseSpeed:currentTime];
+//    [self decreaseSpeed:currentTime];
     
 }
 
