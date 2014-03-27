@@ -10,12 +10,14 @@
 
 @interface ScoreCalculator : NSObject
 
-@property (nonatomic) NSNumber *score;
-@property (nonatomic) NSNumber *gameOverScore;
-@property (nonatomic) NSNumber *highestScore;
+@property (nonatomic) NSInteger score;
+@property (nonatomic) NSInteger gameOverScore;
+@property (nonatomic) NSInteger highestScore;
 
 + (ScoreCalculator *)sharedInstance;
 
 + (NSNumber *)calculateScoreWithSpeed:(CGFloat)speed time:(NSTimeInterval)time;
+
++ (NSInteger)calculateScore:(NSInteger)speed;
 
 @end

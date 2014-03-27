@@ -16,14 +16,33 @@
     return [NSNumber numberWithFloat:speed * time];
 }
 
-static ScoreCalculator *sharedHelper = nil;
 
-+ (ScoreCalculator *) sharedInstance {
++ (NSInteger)calculateScore:(NSInteger)speed {
     
-    if (!sharedHelper) {
-        sharedHelper = [[ScoreCalculator alloc] init];
+    NSInteger score = (speed * 5);
+
+    return score;
+}
+
+#pragma mark Singleton Methods
+
++ (id)sharedInstance {
+    
+    static ScoreCalculator *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
+
+- (id)init {
+    
+    if (self = [super init]) {
+        _score = 0;
+        
     }
-    return sharedHelper;
+    return self;
 }
 
 @end

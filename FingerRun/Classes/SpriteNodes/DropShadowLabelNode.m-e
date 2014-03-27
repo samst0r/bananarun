@@ -51,4 +51,10 @@
     self.dropShadowString.text = text;
 }
 
+- (void)setName:(NSString *)name {
+    
+    [super setName:name];
+    
+    self.dropShadowString.name = name;
+}
 @end
