@@ -1,0 +1,663 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22550D4718DEEA5500168887 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22550D4618DEEA5500168887 /* GameOverScene.m */; };
+		2289F62418E35ED80035303F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289F62318E35ED80035303F /* GameKit.framework */; };
+		2289F62618E35EDD0035303F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289F62518E35EDD0035303F /* StoreKit.framework */; };
+		2289F62D18E370260035303F /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289F62C18E370260035303F /* GCHelper.m */; };
+		2289F63018E373830035303F /* RoadMarkerSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289F62F18E373830035303F /* RoadMarkerSpriteNode.m */; };
+		2289F63318E3758A0035303F /* 04B_19__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 2289F63218E3758A0035303F /* 04B_19__.TTF */; };
+		2289F63718E381400035303F /* SKLabelNode+DropShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289F63618E381400035303F /* SKLabelNode+DropShadow.m */; };
+		2289F63A18E392C00035303F /* ScoreCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289F63918E392C00035303F /* ScoreCalculator.m */; };
+		2289F63D18E3A8800035303F /* DropShadowLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289F63C18E3A8800035303F /* DropShadowLabelNode.m */; };
+		22ACEFD118E0C264001869CA /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ACEFD018E0C264001869CA /* MenuScene.m */; };
+		22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A418DDAF0A004BA14C /* Foundation.framework */; };
+		22DE33A718DDAF0A004BA14C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */; };
+		22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A818DDAF0A004BA14C /* UIKit.framework */; };
+		22DE33AB18DDAF0A004BA14C /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33AA18DDAF0A004BA14C /* SpriteKit.framework */; };
+		22DE33B118DDAF0A004BA14C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33AF18DDAF0A004BA14C /* InfoPlist.strings */; };
+		22DE33CE18DDAF0A004BA14C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33CD18DDAF0A004BA14C /* XCTest.framework */; };
+		22DE33CF18DDAF0A004BA14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A418DDAF0A004BA14C /* Foundation.framework */; };
+		22DE33D018DDAF0A004BA14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A818DDAF0A004BA14C /* UIKit.framework */; };
+		22DE33D818DDAF0A004BA14C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33D618DDAF0A004BA14C /* InfoPlist.strings */; };
+		22DE33DA18DDAF0A004BA14C /* FingerRunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33D918DDAF0A004BA14C /* FingerRunTests.m */; };
+		22DE33E718DDAFEF004BA14C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33E518DDAFEF004BA14C /* AppDelegate.m */; };
+		22DE33E818DDAFEF004BA14C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33E618DDAFEF004BA14C /* main.m */; };
+		22DE33F018DDAFFE004BA14C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33EE18DDAFFE004BA14C /* ViewController.m */; };
+		22DE33F718DDB00C004BA14C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33F418DDB00C004BA14C /* Images.xcassets */; };
+		22DE33FD18DDB4A4004BA14C /* BackgroundSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */; };
+		22DE340118DDB4BE004BA14C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE340018DDB4BE004BA14C /* GameScene.m */; };
+		22DE340D18DDB69C004BA14C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33D618DDAF0A004BA14C /* InfoPlist.strings */; };
+		22DE340E18DDB6DD004BA14C /* Banana Run-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 22DE33F318DDB00C004BA14C /* Banana Run-Prefix.pch */; };
+		22DE341218DDB7C3004BA14C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341018DDB7C3004BA14C /* Main_iPad.storyboard */; };
+		22DE341318DDB7C3004BA14C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */; };
+		22DE341618DDBE1B004BA14C /* FootPrintSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */; };
+		22DE341D18DE2F7E004BA14C /* BananaObsticleSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341C18DE2F7E004BA14C /* BananaObsticleSpriteNode.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22DE33D118DDAF0A004BA14C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22DE339918DDAF0A004BA14C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22DE33A018DDAF0A004BA14C;
+			remoteInfo = FingerRun;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		22550D4518DEEA5500168887 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		22550D4618DEEA5500168887 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		2289F62318E35ED80035303F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		2289F62518E35EDD0035303F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2289F62B18E370260035303F /* GCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelper.h; sourceTree = "<group>"; };
+		2289F62C18E370260035303F /* GCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelper.m; sourceTree = "<group>"; };
+		2289F62E18E373830035303F /* RoadMarkerSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoadMarkerSpriteNode.h; path = SpriteNodes/RoadMarkerSpriteNode.h; sourceTree = "<group>"; };
+		2289F62F18E373830035303F /* RoadMarkerSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoadMarkerSpriteNode.m; path = SpriteNodes/RoadMarkerSpriteNode.m; sourceTree = "<group>"; };
+		2289F63218E3758A0035303F /* 04B_19__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04B_19__.TTF; sourceTree = "<group>"; };
+		2289F63518E381400035303F /* SKLabelNode+DropShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SKLabelNode+DropShadow.h"; path = "Categories/SKLabelNode+DropShadow.h"; sourceTree = "<group>"; };
+		2289F63618E381400035303F /* SKLabelNode+DropShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SKLabelNode+DropShadow.m"; path = "Categories/SKLabelNode+DropShadow.m"; sourceTree = "<group>"; };
+		2289F63818E392C00035303F /* ScoreCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreCalculator.h; path = FingerRun/Classes/ScoreCalculator.h; sourceTree = SOURCE_ROOT; };
+		2289F63918E392C00035303F /* ScoreCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreCalculator.m; path = FingerRun/Classes/ScoreCalculator.m; sourceTree = SOURCE_ROOT; };
+		2289F63B18E3A8800035303F /* DropShadowLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropShadowLabelNode.h; path = SpriteNodes/DropShadowLabelNode.h; sourceTree = "<group>"; };
+		2289F63C18E3A8800035303F /* DropShadowLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropShadowLabelNode.m; path = SpriteNodes/DropShadowLabelNode.m; sourceTree = "<group>"; };
+		22ACEFCF18E0C264001869CA /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
+		22ACEFD018E0C264001869CA /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
+		22DE33A118DDAF0A004BA14C /* Banana Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banana Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22DE33A418DDAF0A004BA14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22DE33A818DDAF0A004BA14C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		22DE33AA18DDAF0A004BA14C /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		22DE33B018DDAF0A004BA14C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22DE33CC18DDAF0A004BA14C /* Banana RunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Banana RunTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22DE33CD18DDAF0A004BA14C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		22DE33D518DDAF0A004BA14C /* Banana RunTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Banana RunTests-Info.plist"; sourceTree = "<group>"; };
+		22DE33D718DDAF0A004BA14C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22DE33D918DDAF0A004BA14C /* FingerRunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FingerRunTests.m; sourceTree = "<group>"; };
+		22DE33E418DDAFEF004BA14C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		22DE33E518DDAFEF004BA14C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		22DE33E618DDAFEF004BA14C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22DE33ED18DDAFFE004BA14C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		22DE33EE18DDAFFE004BA14C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		22DE33F218DDB00C004BA14C /* Banana Run-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Banana Run-Info.plist"; sourceTree = "<group>"; };
+		22DE33F318DDB00C004BA14C /* Banana Run-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Banana Run-Prefix.pch"; sourceTree = "<group>"; };
+		22DE33F418DDB00C004BA14C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		22DE33FB18DDB4A4004BA14C /* BackgroundSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundSpriteNode.h; path = SpriteNodes/BackgroundSpriteNode.h; sourceTree = "<group>"; };
+		22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundSpriteNode.m; path = SpriteNodes/BackgroundSpriteNode.m; sourceTree = "<group>"; };
+		22DE33FF18DDB4BE004BA14C /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		22DE340018DDB4BE004BA14C /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		22DE341018DDB7C3004BA14C /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		22DE341418DDBE1B004BA14C /* FootPrintSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FootPrintSpriteNode.h; path = SpriteNodes/FootPrintSpriteNode.h; sourceTree = "<group>"; };
+		22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FootPrintSpriteNode.m; path = SpriteNodes/FootPrintSpriteNode.m; sourceTree = "<group>"; };
+		22DE341B18DE2F7E004BA14C /* BananaObsticleSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BananaObsticleSpriteNode.h; path = SpriteNodes/Obsticles/BananaObsticleSpriteNode.h; sourceTree = "<group>"; };
+		22DE341C18DE2F7E004BA14C /* BananaObsticleSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BananaObsticleSpriteNode.m; path = SpriteNodes/Obsticles/BananaObsticleSpriteNode.m; sourceTree = "<group>"; };
+		22DE341E18DE36FE004BA14C /* CollisionCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionCategories.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22DE339E18DDAF0A004BA14C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DE33A718DDAF0A004BA14C /* CoreGraphics.framework in Frameworks */,
+				22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */,
+				22DE33AB18DDAF0A004BA14C /* SpriteKit.framework in Frameworks */,
+				2289F62618E35EDD0035303F /* StoreKit.framework in Frameworks */,
+				22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */,
+				2289F62418E35ED80035303F /* GameKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22DE33C918DDAF0A004BA14C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DE33CE18DDAF0A004BA14C /* XCTest.framework in Frameworks */,
+				22DE33D018DDAF0A004BA14C /* UIKit.framework in Frameworks */,
+				22DE33CF18DDAF0A004BA14C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2289F62A18E370260035303F /* GameCenter */ = {
+			isa = PBXGroup;
+			children = (
+				2289F62B18E370260035303F /* GCHelper.h */,
+				2289F62C18E370260035303F /* GCHelper.m */,
+			);
+			path = GameCenter;
+			sourceTree = "<group>";
+		};
+		2289F63118E3758A0035303F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2289F63218E3758A0035303F /* 04B_19__.TTF */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2289F63418E380F10035303F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				22DE341E18DE36FE004BA14C /* CollisionCategories.h */,
+				2289F63518E381400035303F /* SKLabelNode+DropShadow.h */,
+				2289F63618E381400035303F /* SKLabelNode+DropShadow.m */,
+				2289F63B18E3A8800035303F /* DropShadowLabelNode.h */,
+				2289F63C18E3A8800035303F /* DropShadowLabelNode.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		22DE339818DDAF0A004BA14C = {
+			isa = PBXGroup;
+			children = (
+				22DE33AC18DDAF0A004BA14C /* BananaRun */,
+				22DE33D318DDAF0A004BA14C /* FingerRunTests */,
+				22DE33A318DDAF0A004BA14C /* Frameworks */,
+				22DE33A218DDAF0A004BA14C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22DE33A218DDAF0A004BA14C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22DE33A118DDAF0A004BA14C /* Banana Run.app */,
+				22DE33CC18DDAF0A004BA14C /* Banana RunTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22DE33A318DDAF0A004BA14C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2289F62518E35EDD0035303F /* StoreKit.framework */,
+				2289F62318E35ED80035303F /* GameKit.framework */,
+				22DE33A418DDAF0A004BA14C /* Foundation.framework */,
+				22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */,
+				22DE33A818DDAF0A004BA14C /* UIKit.framework */,
+				22DE33AA18DDAF0A004BA14C /* SpriteKit.framework */,
+				22DE33CD18DDAF0A004BA14C /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22DE33AC18DDAF0A004BA14C /* BananaRun */ = {
+			isa = PBXGroup;
+			children = (
+				22DE33E318DDAFEF004BA14C /* Classes */,
+				22DE33F118DDB00C004BA14C /* Resources */,
+				22DE33AD18DDAF0A004BA14C /* Supporting Files */,
+			);
+			name = BananaRun;
+			path = FingerRun;
+			sourceTree = "<group>";
+		};
+		22DE33AD18DDAF0A004BA14C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22DE33AF18DDAF0A004BA14C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22DE33D318DDAF0A004BA14C /* FingerRunTests */ = {
+			isa = PBXGroup;
+			children = (
+				22DE33D918DDAF0A004BA14C /* FingerRunTests.m */,
+				22DE33D418DDAF0A004BA14C /* Supporting Files */,
+			);
+			path = FingerRunTests;
+			sourceTree = "<group>";
+		};
+		22DE33D418DDAF0A004BA14C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22DE33D518DDAF0A004BA14C /* Banana RunTests-Info.plist */,
+				22DE33D618DDAF0A004BA14C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22DE33E318DDAFEF004BA14C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2289F63418E380F10035303F /* Categories */,
+				2289F62A18E370260035303F /* GameCenter */,
+				22DE33FE18DDB4BE004BA14C /* Scenes */,
+				22DE33FA18DDB44B004BA14C /* Nodes */,
+				22DE33E918DDAFFE004BA14C /* ViewControllers */,
+				22DE33E418DDAFEF004BA14C /* AppDelegate.h */,
+				22DE33E518DDAFEF004BA14C /* AppDelegate.m */,
+				22DE33E618DDAFEF004BA14C /* main.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		22DE33E918DDAFFE004BA14C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				22DE33ED18DDAFFE004BA14C /* ViewController.h */,
+				22DE33EE18DDAFFE004BA14C /* ViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		22DE33F118DDB00C004BA14C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2289F63118E3758A0035303F /* Fonts */,
+				22DE340F18DDB7C3004BA14C /* Storyboards */,
+				22DE33F218DDB00C004BA14C /* Banana Run-Info.plist */,
+				22DE33F318DDB00C004BA14C /* Banana Run-Prefix.pch */,
+				22DE33F418DDB00C004BA14C /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		22DE33FA18DDB44B004BA14C /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				22DE33FB18DDB4A4004BA14C /* BackgroundSpriteNode.h */,
+				22DE33FC18DDB4A4004BA14C /* BackgroundSpriteNode.m */,
+				22DE341418DDBE1B004BA14C /* FootPrintSpriteNode.h */,
+				22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */,
+				22DE341A18DE2F62004BA14C /* Obsticles */,
+				2289F62E18E373830035303F /* RoadMarkerSpriteNode.h */,
+				2289F62F18E373830035303F /* RoadMarkerSpriteNode.m */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
+		22DE33FE18DDB4BE004BA14C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				22DE33FF18DDB4BE004BA14C /* GameScene.h */,
+				22DE340018DDB4BE004BA14C /* GameScene.m */,
+				2289F63818E392C00035303F /* ScoreCalculator.h */,
+				2289F63918E392C00035303F /* ScoreCalculator.m */,
+				22550D4518DEEA5500168887 /* GameOverScene.h */,
+				22550D4618DEEA5500168887 /* GameOverScene.m */,
+				22ACEFCF18E0C264001869CA /* MenuScene.h */,
+				22ACEFD018E0C264001869CA /* MenuScene.m */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		22DE340F18DDB7C3004BA14C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				22DE341018DDB7C3004BA14C /* Main_iPad.storyboard */,
+				22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		22DE341A18DE2F62004BA14C /* Obsticles */ = {
+			isa = PBXGroup;
+			children = (
+				22DE341B18DE2F7E004BA14C /* BananaObsticleSpriteNode.h */,
+				22DE341C18DE2F7E004BA14C /* BananaObsticleSpriteNode.m */,
+			);
+			name = Obsticles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22DE33A018DDAF0A004BA14C /* Banana Run */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22DE33DD18DDAF0A004BA14C /* Build configuration list for PBXNativeTarget "Banana Run" */;
+			buildPhases = (
+				22DE339D18DDAF0A004BA14C /* Sources */,
+				22DE339E18DDAF0A004BA14C /* Frameworks */,
+				22DE339F18DDAF0A004BA14C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Banana Run";
+			productName = FingerRun;
+			productReference = 22DE33A118DDAF0A004BA14C /* Banana Run.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22DE33CB18DDAF0A004BA14C /* Banana RunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22DE33E018DDAF0A004BA14C /* Build configuration list for PBXNativeTarget "Banana RunTests" */;
+			buildPhases = (
+				22DE33C818DDAF0A004BA14C /* Sources */,
+				22DE33C918DDAF0A004BA14C /* Frameworks */,
+				22DE33CA18DDAF0A004BA14C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22DE33D218DDAF0A004BA14C /* PBXTargetDependency */,
+			);
+			name = "Banana RunTests";
+			productName = FingerRunTests;
+			productReference = 22DE33CC18DDAF0A004BA14C /* Banana RunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22DE339918DDAF0A004BA14C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Samuel Ward";
+				TargetAttributes = {
+					22DE33A018DDAF0A004BA14C = {
+						DevelopmentTeam = RCHUN65RQ4;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
+					};
+					22DE33CB18DDAF0A004BA14C = {
+						TestTargetID = 22DE33A018DDAF0A004BA14C;
+					};
+				};
+			};
+			buildConfigurationList = 22DE339C18DDAF0A004BA14C /* Build configuration list for PBXProject "Banana Run" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22DE339818DDAF0A004BA14C;
+			productRefGroup = 22DE33A218DDAF0A004BA14C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22DE33A018DDAF0A004BA14C /* Banana Run */,
+				22DE33CB18DDAF0A004BA14C /* Banana RunTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22DE339F18DDAF0A004BA14C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DE341218DDB7C3004BA14C /* Main_iPad.storyboard in Resources */,
+				22DE340E18DDB6DD004BA14C /* Banana Run-Prefix.pch in Resources */,
+				22DE341318DDB7C3004BA14C /* Main_iPhone.storyboard in Resources */,
+				2289F63318E3758A0035303F /* 04B_19__.TTF in Resources */,
+				22DE340D18DDB69C004BA14C /* InfoPlist.strings in Resources */,
+				22DE33F718DDB00C004BA14C /* Images.xcassets in Resources */,
+				22DE33B118DDAF0A004BA14C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22DE33CA18DDAF0A004BA14C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DE33D818DDAF0A004BA14C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22DE339D18DDAF0A004BA14C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DE341D18DE2F7E004BA14C /* BananaObsticleSpriteNode.m in Sources */,
+				2289F63718E381400035303F /* SKLabelNode+DropShadow.m in Sources */,
+				22ACEFD118E0C264001869CA /* MenuScene.m in Sources */,
+				2289F63A18E392C00035303F /* ScoreCalculator.m in Sources */,
+				22550D4718DEEA5500168887 /* GameOverScene.m in Sources */,
+				22DE340118DDB4BE004BA14C /* GameScene.m in Sources */,
+				22DE33FD18DDB4A4004BA14C /* BackgroundSpriteNode.m in Sources */,
+				2289F63D18E3A8800035303F /* DropShadowLabelNode.m in Sources */,
+				22DE341618DDBE1B004BA14C /* FootPrintSpriteNode.m in Sources */,
+				22DE33E718DDAFEF004BA14C /* AppDelegate.m in Sources */,
+				22DE33E818DDAFEF004BA14C /* main.m in Sources */,
+				22DE33F018DDAFFE004BA14C /* ViewController.m in Sources */,
+				2289F63018E373830035303F /* RoadMarkerSpriteNode.m in Sources */,
+				2289F62D18E370260035303F /* GCHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22DE33C818DDAF0A004BA14C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DE33DA18DDAF0A004BA14C /* FingerRunTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22DE33D218DDAF0A004BA14C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22DE33A018DDAF0A004BA14C /* Banana Run */;
+			targetProxy = 22DE33D118DDAF0A004BA14C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22DE33AF18DDAF0A004BA14C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22DE33B018DDAF0A004BA14C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		22DE33D618DDAF0A004BA14C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22DE33D718DDAF0A004BA14C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22DE33DB18DDAF0A004BA14C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22DE33DC18DDAF0A004BA14C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22DE33DE18DDAF0A004BA14C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FingerRun/Resources/Banana Run-Prefix.pch";
+				INFOPLIST_FILE = "FingerRun/Resources/Banana Run-Info.plist";
+				PRODUCT_NAME = "Banana Run";
+				PROVISIONING_PROFILE = "";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		22DE33DF18DDAF0A004BA14C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FingerRun/Resources/Banana Run-Prefix.pch";
+				INFOPLIST_FILE = "FingerRun/Resources/Banana Run-Info.plist";
+				PRODUCT_NAME = "Banana Run";
+				PROVISIONING_PROFILE = "";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		22DE33E118DDAF0A004BA14C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FingerRun.app/FingerRun";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FingerRun/FingerRun-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FingerRunTests/Banana RunTests-Info.plist";
+				PRODUCT_NAME = "Banana RunTests";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		22DE33E218DDAF0A004BA14C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FingerRun.app/FingerRun";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FingerRun/FingerRun-Prefix.pch";
+				INFOPLIST_FILE = "FingerRunTests/Banana RunTests-Info.plist";
+				PRODUCT_NAME = "Banana RunTests";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22DE339C18DDAF0A004BA14C /* Build configuration list for PBXProject "Banana Run" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22DE33DB18DDAF0A004BA14C /* Debug */,
+				22DE33DC18DDAF0A004BA14C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22DE33DD18DDAF0A004BA14C /* Build configuration list for PBXNativeTarget "Banana Run" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22DE33DE18DDAF0A004BA14C /* Debug */,
+				22DE33DF18DDAF0A004BA14C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22DE33E018DDAF0A004BA14C /* Build configuration list for PBXNativeTarget "Banana RunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22DE33E118DDAF0A004BA14C /* Debug */,
+				22DE33E218DDAF0A004BA14C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22DE339918DDAF0A004BA14C /* Project object */;
+}

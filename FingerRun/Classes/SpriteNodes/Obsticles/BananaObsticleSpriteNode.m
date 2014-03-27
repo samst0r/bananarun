@@ -24,19 +24,19 @@
 
 - (void)setup {
     
-    self.color = [UIColor yellowColor];
     self.size = CGSizeMake(100, 100);
     self.name = @"Banana";
     self.xScale = 0.5f;
     self.yScale = 0.5f;
-    self.texture = [SKTexture textureWithImageNamed:@"banana"];
+    self.texture = [SKTexture textureWithImageNamed:@"pixelbanana"];
+    self.texture.filteringMode = SKTextureFilteringNearest;
     
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
     self.physicsBody.dynamic = YES;
     self.physicsBody.affectedByGravity = NO;
-    self.physicsBody.mass = 0.02;
     
     self.physicsBody.categoryBitMask = ColliderTypeBanana;
+    self.physicsBody.collisionBitMask = ColliderTypeBanana;
 }
 
 - (void)hideAfterOneSecondsWithCompletion:(void (^)(void))completion {
@@ -44,9 +44,7 @@
     SKAction *moveBackAndFade = [SKAction group:@[[SKAction rotateByAngle:degreesToRadians(720) duration:1],
                                                   [SKAction fadeOutWithDuration:1]]];
     
-//    SKAction* soundAction  = [SKAction playSoundFileNamed:soundFileName waitForCompletion:YES];
-    
-    SKAction *fadeOut = [SKAction sequence:@[[SKAction waitForDuration:0.25],
+    SKAction *fadeOut = [SKAction sequence:@[[SKAction waitForDuration:0.10],
                                              moveBackAndFade,
                                              [SKAction runBlock:completion]]];
     
@@ -54,6 +52,7 @@
 }
 
 CGFloat degreesToRadians(CGFloat degrees) {
+    
     return degrees * M_PI / 180;
 };
 

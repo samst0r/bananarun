@@ -22,22 +22,14 @@ static GCHelper *sharedHelper = nil;
 }
 
 - (BOOL)isGameCenterAvailable {
-    
-    // check for presence of GKLocalPlayer API
-    Class gcClass = (NSClassFromString(@"GKLocalPlayer"));
-    
-    // check if the device is running iOS 4.1 or later
-    NSString *reqSysVer = @"4.1";
-    NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
-    BOOL osVersionSupported = ([currSysVer compare:reqSysVer
-                                           options:NSNumericSearch] != NSOrderedAscending);
-    
-    return (gcClass && osVersionSupported);
+    return YES;
 }
 
 - (id)init {
     
-    if ((self = [super init])) {
+    self = [super init];
+    
+    if (self) {
         
         self.gameCenterAvailable = [self isGameCenterAvailable];
 
@@ -57,11 +49,11 @@ static GCHelper *sharedHelper = nil;
     if ([GKLocalPlayer localPlayer].isAuthenticated && !self.userAuthenticated) {
         
         NSLog(@"Authentication changed: player authenticated.");
-        self.userAuthenticated = TRUE;
+        self.userAuthenticated = YES;
     } else if (![GKLocalPlayer localPlayer].isAuthenticated && self.userAuthenticated) {
         
         NSLog(@"Authentication changed: player not authenticated");
-        self.userAuthenticated = FALSE;
+        self.userAuthenticated = NO;
     }
     
 }
@@ -70,7 +62,10 @@ static GCHelper *sharedHelper = nil;
 
 - (void)authenticateLocalUser {
     
-    if (!self.gameCenterAvailable) return;
+    [GKLocalPlayer localPlayer].authenticateHandler = ^(UIViewController *viewController, NSError *error){
+        
+        NSLog(<#NSString *format, ...#>)
+    };
     
     NSLog(@"Authenticating local user...");
     if (![GKLocalPlayer localPlayer].authenticated) {

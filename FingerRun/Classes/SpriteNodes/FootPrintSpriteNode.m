@@ -28,13 +28,11 @@
     self.size = CGSizeMake(20, 60);
     
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
-    self.physicsBody.dynamic = YES;
+    self.physicsBody.dynamic = NO;
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.mass = 0.1;
     
     self.physicsBody.categoryBitMask = ColliderTypeFootprint;
-    
-//    self.physicsBody.collisionBitMask = ColliderTypeBanana;
     self.physicsBody.contactTestBitMask = ColliderTypeBanana;
 }
 
