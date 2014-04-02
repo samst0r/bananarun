@@ -19,14 +19,11 @@
 #import "DropShadowLabelNode.h"
 #import "ScoreCalculator.h"
 
+#import "InAppPurchaseManager.h"
+
 @import GameKit;
-@import StoreKit;
 
-@interface GameScene () <SKPhysicsContactDelegate,
-                         SKPaymentTransactionObserver,
-                        SKProductsRequestDelegate>
-
-@property (strong, nonatomic) SKProduct *product;
+@interface GameScene () <SKPhysicsContactDelegate>
 
 @property (nonatomic) BackgroundSpriteNode *background;
 @property (nonatomic) RoadMarkerSpriteNode *roadMarkerNode;
@@ -45,6 +42,8 @@
 @property (nonatomic) CGFloat highScore;
 @property (nonatomic) CGFloat topScore;
 
+@property (nonatomic) InAppPurchaseManager *inAppPurchaseManager;
+
 @property BOOL startTimer;
 
 @property BOOL gameEnding;
@@ -56,12 +55,13 @@
 
 #pragma mark - Initialisation
 
-- (id)initWithSize:(CGSize)size {
+- (instancetype)initWithSize:(CGSize)size {
     
     if (self = [super initWithSize:size]) {
     
-        self.timeOfLastMove = 0.0;
-        self.movementSpeed = 0.0;
+        _timeOfLastMove = 0.0;
+        _movementSpeed = 0.0;
+        _inAppPurchaseManager = [[InAppPurchaseManager alloc] init];
     }
     
     return self;
@@ -203,82 +203,6 @@
     }];
 }
 
-#pragma mark - In App Purchase
-- (void)beginPurchaseOfExtraLife {
-    
-    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
-    [self purchaseExtraLife];
-}
-
-- (void)purchaseExtraLife {
-    
-    static NSString *extraContinue = @"OneExtraContinue";
-    
-    if ([SKPaymentQueue canMakePayments])
-    {
-        SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:extraContinue]];
-        request.delegate = self;
-        
-        [request start];
-    }
-    else {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enable In App Purchase in Settings" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-        [alert show];
-    }
-}
-
-#pragma mark -
-#pragma mark SKProductsRequestDelegate
-
--(void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
-    
-    NSArray *products = response.products;
-    
-    if (products.count != 0) {
-        
-        self.product = products[0];
-    } else {
-        
-        NSLog(@"No item found");
-    }
-    
-    products = response.invalidProductIdentifiers;
-    
-    for (SKProduct *product in products)
-    {
-        NSLog(@"Product not found: %@", product);
-    }
-}
-
-#pragma mark -
-#pragma mark SKPaymentTransactionObserver
-
--(void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
-{
-    for (SKPaymentTransaction *transaction in transactions)
-    {
-        switch (transaction.transactionState) {
-            case SKPaymentTransactionStatePurchased:
-                
-                self.pausedGame = NO;
-                self.extraLife = YES;
-                
-                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-                break;
-                
-            case SKPaymentTransactionStateFailed:
-                
-                NSLog(@"Transaction Failed");
-                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-                break;
-                
-            default:
-                break;
-        }
-    }
-}
-
 #pragma mark - User Tap Helpers
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -293,11 +217,10 @@
             [node.name isEqualToString:@"purchaseLabel"] ||
             [node.name isEqualToString:@"extraLifeLabel"]) {
             
-            [self beginPurchaseOfExtraLife];
+            [self.inAppPurchaseManager beginPurchaseOfExtraLife];
         } else {
             
             NSLog(@"Continue");
-            [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
             
             [self endGame];
         }
