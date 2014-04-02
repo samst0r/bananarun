@@ -56,7 +56,7 @@
 
 - (void)addScoreLabel {
     
-    NSString *scoreString = [NSString stringWithFormat:@"%07ld", [ScoreCalculator sharedInstance].gameOverScore];
+    NSString *scoreString = [NSString stringWithFormat:@"%07ld", (long)[ScoreCalculator sharedInstance].gameOverScore];
     
     DropShadowLabelNode *scoreLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:scoreString
                                                                    fontSize:40.0f
@@ -71,7 +71,7 @@
 
 - (void)addHighestScoreLabel {
     
-    NSString *scoreString = [NSString stringWithFormat:@"%07ld", [ScoreCalculator sharedInstance].highestScore];
+    NSString *scoreString = [NSString stringWithFormat:@"%07ld", (long)[ScoreCalculator sharedInstance].highestScore];
     
     DropShadowLabelNode *highestScoreLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:@"HIGHEST"
                                                                                   fontSize:20.0f

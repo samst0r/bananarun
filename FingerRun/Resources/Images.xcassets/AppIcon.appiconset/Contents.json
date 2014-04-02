@@ -13,7 +13,7 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "pixelbananaicon-1-1.png",
+      "filename" : "icon-120-1-1.png",
       "scale" : "2x"
     },
     {
@@ -42,9 +42,8 @@
       "scale" : "1x"
     },
     {
-      "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "pixelbananaicon-1.png",
+      "size" : "76x76",
       "scale" : "2x"
     },
     {
@@ -53,9 +52,8 @@
       "scale" : "1x"
     },
     {
-      "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "pixelbananaicon-1-2.png",
+      "size" : "512x512",
       "scale" : "2x"
     }
   ],
