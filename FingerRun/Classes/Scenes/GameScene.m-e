@@ -71,7 +71,7 @@
     
     NSInteger score = [ScoreCalculator sharedInstance].score;
     
-    NSString *scoreString = [NSString stringWithFormat:@"%07ld", score];
+    NSString *scoreString = [NSString stringWithFormat:@"%07ld", (long)score];
     
     self.scoreLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:scoreString
                                                                    fontSize:30.0f
@@ -171,7 +171,7 @@
         
         NSInteger score = [ScoreCalculator sharedInstance].score;
         
-        self.scoreLabel.text = [NSString stringWithFormat:@"%07ld", score];
+        self.scoreLabel.text = [NSString stringWithFormat:@"%07ld", (long)score];
     }
 }
 
@@ -297,10 +297,13 @@
         } else {
             
             NSLog(@"Continue");
+            [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
+            
             [self endGame];
         }
     } else {
-    
+
+        
         if (self.startTimer) {
             
             self.timeWithoutHittingABanana = [NSDate date];
@@ -470,6 +473,12 @@
     [self.view presentScene:gameOverScene transition:[SKTransition doorsOpenHorizontalWithDuration:0.25]];
     
     self.topSpeed = 0;
+}
+
+- (void)dealloc {
+    
+    
+    
 }
 
 @end

@@ -25,7 +25,7 @@
     
     self.texture = [SKTexture textureWithImageNamed:@"footprint"];
     self.name = @"Footprint";
-    self.size = CGSizeMake(20, 60);
+    self.size = CGSizeMake(30, 70);
     
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
     self.physicsBody.dynamic = NO;

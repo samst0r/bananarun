@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22092C9018E4E03A00226A63 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22092C8F18E4E03A00226A63 /* SystemConfiguration.framework */; };
 		22550D4718DEEA5500168887 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22550D4618DEEA5500168887 /* GameOverScene.m */; };
 		2289F62418E35ED80035303F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289F62318E35ED80035303F /* GameKit.framework */; };
 		2289F62618E35EDD0035303F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289F62518E35EDD0035303F /* StoreKit.framework */; };
@@ -18,6 +19,7 @@
 		2289F63D18E3A8800035303F /* DropShadowLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289F63C18E3A8800035303F /* DropShadowLabelNode.m */; };
 		22ACEFD118E0C264001869CA /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ACEFD018E0C264001869CA /* MenuScene.m */; };
 		22D2EF5E18E4DCE9002ECA89 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D2EF5D18E4DCE9002ECA89 /* Crashlytics.framework */; };
+		22D8221418EC868B000DAFD2 /* InAppPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8221318EC868B000DAFD2 /* InAppPurchaseManager.m */; };
 		22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A418DDAF0A004BA14C /* Foundation.framework */; };
 		22DE33A718DDAF0A004BA14C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */; };
 		22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A818DDAF0A004BA14C /* UIKit.framework */; };
@@ -40,6 +42,7 @@
 		22DE341318DDB7C3004BA14C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE341118DDB7C3004BA14C /* Main_iPhone.storyboard */; };
 		22DE341618DDBE1B004BA14C /* FootPrintSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341518DDBE1B004BA14C /* FootPrintSpriteNode.m */; };
 		22DE341D18DE2F7E004BA14C /* BananaObsticleSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DE341C18DE2F7E004BA14C /* BananaObsticleSpriteNode.m */; };
+		B0CB5B07184C4287BBDCF231 /* libPods-Banana Run.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD57D07F7694415866EB60E /* libPods-Banana Run.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22092C8F18E4E03A00226A63 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22550D4518DEEA5500168887 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		22550D4618DEEA5500168887 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		2289F62318E35ED80035303F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -71,6 +75,8 @@
 		22ACEFCF18E0C264001869CA /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		22ACEFD018E0C264001869CA /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
 		22D2EF5D18E4DCE9002ECA89 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		22D8221218EC868B000DAFD2 /* InAppPurchaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InAppPurchaseManager.h; path = InAppPurchase/InAppPurchaseManager.h; sourceTree = "<group>"; };
+		22D8221318EC868B000DAFD2 /* InAppPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InAppPurchaseManager.m; path = InAppPurchase/InAppPurchaseManager.m; sourceTree = "<group>"; };
 		22DE33A118DDAF0A004BA14C /* Banana Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banana Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DE33A418DDAF0A004BA14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -101,6 +107,8 @@
 		22DE341B18DE2F7E004BA14C /* BananaObsticleSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BananaObsticleSpriteNode.h; path = SpriteNodes/Obsticles/BananaObsticleSpriteNode.h; sourceTree = "<group>"; };
 		22DE341C18DE2F7E004BA14C /* BananaObsticleSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BananaObsticleSpriteNode.m; path = SpriteNodes/Obsticles/BananaObsticleSpriteNode.m; sourceTree = "<group>"; };
 		22DE341E18DE36FE004BA14C /* CollisionCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionCategories.h; sourceTree = "<group>"; };
+		415169FDB24C4CCDB1816939 /* Pods-Banana Run.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banana Run.xcconfig"; path = "Pods/Pods-Banana Run.xcconfig"; sourceTree = "<group>"; };
+		8CD57D07F7694415866EB60E /* libPods-Banana Run.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Banana Run.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22092C9018E4E03A00226A63 /* SystemConfiguration.framework in Frameworks */,
 				22DE33A718DDAF0A004BA14C /* CoreGraphics.framework in Frameworks */,
 				22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */,
 				22DE33AB18DDAF0A004BA14C /* SpriteKit.framework in Frameworks */,
@@ -115,6 +124,7 @@
 				22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */,
 				2289F62418E35ED80035303F /* GameKit.framework in Frameworks */,
 				22D2EF5E18E4DCE9002ECA89 /* Crashlytics.framework in Frameworks */,
+				B0CB5B07184C4287BBDCF231 /* libPods-Banana Run.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +170,15 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		22D8221118EC866F000DAFD2 /* InApp Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				22D8221218EC868B000DAFD2 /* InAppPurchaseManager.h */,
+				22D8221318EC868B000DAFD2 /* InAppPurchaseManager.m */,
+			);
+			name = "InApp Purchase";
+			sourceTree = "<group>";
+		};
 		22DE339818DDAF0A004BA14C = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +186,7 @@
 				22DE33D318DDAF0A004BA14C /* FingerRunTests */,
 				22DE33A318DDAF0A004BA14C /* Frameworks */,
 				22DE33A218DDAF0A004BA14C /* Products */,
+				415169FDB24C4CCDB1816939 /* Pods-Banana Run.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,6 +202,7 @@
 		22DE33A318DDAF0A004BA14C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22092C8F18E4E03A00226A63 /* SystemConfiguration.framework */,
 				22D2EF5D18E4DCE9002ECA89 /* Crashlytics.framework */,
 				2289F62518E35EDD0035303F /* StoreKit.framework */,
 				2289F62318E35ED80035303F /* GameKit.framework */,
@@ -190,6 +211,7 @@
 				22DE33A818DDAF0A004BA14C /* UIKit.framework */,
 				22DE33AA18DDAF0A004BA14C /* SpriteKit.framework */,
 				22DE33CD18DDAF0A004BA14C /* XCTest.framework */,
+				8CD57D07F7694415866EB60E /* libPods-Banana Run.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,6 +256,7 @@
 		22DE33E318DDAFEF004BA14C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				22D8221118EC866F000DAFD2 /* InApp Purchase */,
 				2289F63418E380F10035303F /* Categories */,
 				2289F62A18E370260035303F /* GameCenter */,
 				22DE33FE18DDB4BE004BA14C /* Scenes */,
@@ -321,10 +344,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22DE33DD18DDAF0A004BA14C /* Build configuration list for PBXNativeTarget "Banana Run" */;
 			buildPhases = (
+				7B6F494BB3E648FA909DAEEA /* Check Pods Manifest.lock */,
 				22DE339D18DDAF0A004BA14C /* Sources */,
 				22DE339E18DDAF0A004BA14C /* Frameworks */,
 				22DE339F18DDAF0A004BA14C /* Resources */,
 				22D2EF5C18E4DCC5002ECA89 /* Run Script */,
+				CB5E4D9774494820B660642D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -437,6 +462,36 @@
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics.framework/run 437973c79408288d15efb4a888494667425c729c cfb932823b29e302c24ca96b34982f5afb3d52f26d45a0909439272c67d4d9bf";
 		};
+		7B6F494BB3E648FA909DAEEA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB5E4D9774494820B660642D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Banana Run-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -451,6 +506,7 @@
 				22550D4718DEEA5500168887 /* GameOverScene.m in Sources */,
 				22DE340118DDB4BE004BA14C /* GameScene.m in Sources */,
 				22DE33FD18DDB4A4004BA14C /* BackgroundSpriteNode.m in Sources */,
+				22D8221418EC868B000DAFD2 /* InAppPurchaseManager.m in Sources */,
 				2289F63D18E3A8800035303F /* DropShadowLabelNode.m in Sources */,
 				22DE341618DDBE1B004BA14C /* FootPrintSpriteNode.m in Sources */,
 				22DE33E718DDAFEF004BA14C /* AppDelegate.m in Sources */,
@@ -575,6 +631,7 @@
 		};
 		22DE33DE18DDAF0A004BA14C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 415169FDB24C4CCDB1816939 /* Pods-Banana Run.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -596,6 +653,7 @@
 		};
 		22DE33DF18DDAF0A004BA14C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 415169FDB24C4CCDB1816939 /* Pods-Banana Run.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
