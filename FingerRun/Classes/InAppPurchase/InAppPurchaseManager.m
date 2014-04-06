@@ -8,14 +8,27 @@
 
 #import "InAppPurchaseManager.h"
 
+@import StoreKit;
+
+@interface InAppPurchaseManager () <SKPaymentTransactionObserver, SKProductsRequestDelegate>
+
+@end
+
 @implementation InAppPurchaseManager
 
-/*
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+    }
+    return self;
+}
 
 #pragma mark - In App Purchase
 - (void)beginPurchaseOfExtraLife {
     
-    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     [self purchaseExtraLife];
 }
 
@@ -32,12 +45,14 @@
     }
     else {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enable In App Purchase in Settings" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-        [alert show];
+        [[[UIAlertView alloc] initWithTitle:@"Error"
+                                   message:@"Please enable In App Purchase in Settings"
+                                  delegate:self
+                         cancelButtonTitle:@"Okay"
+                         otherButtonTitles:nil] show];
     }
 }
 
-#pragma mark -
 #pragma mark SKProductsRequestDelegate
 
 -(void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
@@ -54,13 +69,12 @@
     
     products = response.invalidProductIdentifiers;
     
-    for (SKProduct *product in products)
-    {
+    for (SKProduct *product in products) {
+        
         NSLog(@"Product not found: %@", product);
     }
 }
 
-#pragma mark -
 #pragma mark SKPaymentTransactionObserver
 
 -(void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
@@ -68,10 +82,13 @@
     for (SKPaymentTransaction *transaction in transactions)
     {
         switch (transaction.transactionState) {
+                
             case SKPaymentTransactionStatePurchased:
                 
-                self.pausedGame = NO;
-                self.extraLife = YES;
+//                self.pausedGame = NO;
+//                self.extraLife = YES;
+                
+                NSLog(@"Purchased Successfully");
                 
                 [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
                 break;
@@ -87,6 +104,6 @@
         }
     }
 }
- 
+
 
 @end

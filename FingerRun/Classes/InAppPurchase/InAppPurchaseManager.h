@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class SKProduct;
+
 @interface InAppPurchaseManager : NSObject
+
+- (void)beginPurchaseOfExtraLife;
+
+@property (strong, nonatomic) SKProduct *product;
 
 @end
