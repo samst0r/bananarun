@@ -19,9 +19,8 @@
 #import "DropShadowLabelNode.h"
 #import "ScoreCalculator.h"
 
-#import "InAppPurchaseManager.h"
-
 @import GameKit;
+@import iAd;
 
 @interface GameScene () <SKPhysicsContactDelegate>
 
@@ -29,20 +28,11 @@
 @property (nonatomic) RoadMarkerSpriteNode *roadMarkerNode;
 @property (nonatomic) DropShadowLabelNode *scoreLabel;
 
-@property (nonatomic, getter=hasExtraLife) BOOL extraLife;
-
 @property (nonatomic) CGFloat topSpeed;
-
-// calculate speed
 @property (nonatomic) CGFloat movementSpeed;
+
 @property NSDate *timeWithoutHittingABanana;
-
 @property NSTimeInterval timeOfLastMove;
-
-@property (nonatomic) CGFloat highScore;
-@property (nonatomic) CGFloat topScore;
-
-@property (nonatomic) InAppPurchaseManager *inAppPurchaseManager;
 
 @property BOOL startTimer;
 
@@ -61,7 +51,6 @@
     
         _timeOfLastMove = 0.0;
         _movementSpeed = 0.0;
-        _inAppPurchaseManager = [[InAppPurchaseManager alloc] init];
     }
     
     return self;
@@ -78,7 +67,7 @@
                                                                       color:[SKColor blackColor]
                                                                 shadowColor:[SKColor whiteColor]];
     
-    self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.size.height - 50.0f);
+    self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.view.bounds.size.height - 50.0f);
     [self addChild:self.scoreLabel];
 }
 
@@ -104,7 +93,6 @@
     self.startTimer = YES;
     self.gameEnding = NO;
     self.pausedGame = NO;
-    self.extraLife = NO;
 }
 
 - (void)setupAndAddBackground {
@@ -157,26 +145,21 @@
     
     if (self.gameEnding) return;
     
-    if (self.pausedGame) {
-        
-    } else {
+    [self moveRoadMarker:currentTime];
+    [self moveBananaObsticles:currentTime];
     
-        [self moveRoadMarker];
-        [self moveBananaObsticles:currentTime];
+    if (self.children.count <= 13) {
         
-        if (self.children.count <= 13) {
-            
-            [self addBanana];
-        }
-        
-        NSInteger score = [ScoreCalculator sharedInstance].score;
-        
-        self.scoreLabel.text = [NSString stringWithFormat:@"%07ld", (long)score];
+        [self addBanana];
     }
+    
+    NSInteger score = [ScoreCalculator sharedInstance].score;
+    
+    self.scoreLabel.text = [NSString stringWithFormat:@"%07ld", (long)score];
 }
 
 #pragma mark - Scene Update Helpers
-- (void)moveRoadMarker {
+- (void)moveRoadMarker:(NSTimeInterval)currentTime {
     
     self.roadMarkerNode.position = CGPointMake(self.roadMarkerNode.position.x,
                                                self.roadMarkerNode.position.y - self.movementSpeed);
@@ -209,21 +192,14 @@
     
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
-    SKNode *node = [self nodeAtPoint:location];
 
     if (self.pausedGame) {
+
+            
+        NSLog(@"Continue");
         
-        if ([node.name isEqualToString:@"purchaseButton"] ||
-            [node.name isEqualToString:@"purchaseLabel"] ||
-            [node.name isEqualToString:@"extraLifeLabel"]) {
-            
-            [self.inAppPurchaseManager beginPurchaseOfExtraLife];
-        } else {
-            
-            NSLog(@"Continue");
-            
-            [self endGame];
-        }
+        [self endGame];
+
     } else {
 
         
@@ -257,16 +233,11 @@
     
     SKSpriteNode *fireNode = [SKSpriteNode spriteNodeWithColor:[UIColor yellowColor] size:CGSizeMake(190, 110)];
     
-    fireNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) - 10);
+    fireNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
     fireNode.name = @"purchaseButton";
     fireNode.zPosition = 1.0f;
     
-    DropShadowLabelNode *purchaseLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:@"PURCHASE"
-                                                                                          fontSize:30.0f
-                                                                                             color:[SKColor blackColor]
-                                                                                       shadowColor:[SKColor yellowColor]];
-    
-    DropShadowLabelNode *extraLifeLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:@"EXTRA LIFE?"
+    DropShadowLabelNode *purchaseLabel = [[DropShadowLabelNode alloc] initWithDropShadowString:@"CONTINUE?"
                                                                                           fontSize:30.0f
                                                                                              color:[SKColor blackColor]
                                                                                        shadowColor:[SKColor yellowColor]];
@@ -274,14 +245,9 @@
     purchaseLabel.position = CGPointMake(0.0f, 0.0f);
     purchaseLabel.name = @"purchaseLabel";
     
-    extraLifeLabel.position = CGPointMake(0.0f, -30.0f);
-    extraLifeLabel.name = @"extraLifeLabel";
-    extraLifeLabel.zPosition = 0.0f;
-    
     purchaseLabel.zPosition = 0.0f;
     
     [fireNode addChild:purchaseLabel];
-    [purchaseLabel addChild:extraLifeLabel];
     
     [self addChild:fireNode];
 }
@@ -348,36 +314,17 @@
     if ([node isKindOfClass:[BananaObsticleSpriteNode class]]) {
         
         FootPrintSpriteNode *footPrint = (FootPrintSpriteNode *)contact.bodyB.node;
-
         
         if (footPrint.alpha == 1.0f) {
-
-            self.pausedGame = YES;
-
-            [self displayPurchaseAnotherLifeOffer];
             
-            
-            if (!self.hasExtraLife && !self.pausedGame) {
-                
-                self.gameEnding = YES;
-                [self endGame:node];
-            } else {
-                
-                self.background.alpha = 0.1f;
-                self.roadMarkerNode.alpha = 0.1f;
-                self.scoreLabel.alpha = 0.1f;
-                
-                [node hideAfterOneSecondsWithCompletion:^{
-                    
-                    [node removeFromParent];
-                }];
-            }
+            self.gameEnding = YES;
+            [self endGame:node];
         }
     }
 }
 
 #pragma mark - Game Ending
-    
+
 - (void)endGame {
     
     [ScoreCalculator sharedInstance].gameOverScore = [ScoreCalculator sharedInstance].score;
@@ -398,11 +345,34 @@
     self.topSpeed = 0;
 }
 
-- (void)dealloc {
+
+#pragma mark iAd
+
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner {
     
-    
-    
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        banner.frame = CGRectOffset(banner.frame, 0, 0);
+        [self.view  layoutIfNeeded];
+    }];
 }
 
-@end
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        banner.frame = CGRectOffset(banner.frame, 0, 0);
+    }];
+}
 
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
+    
+    if (!willLeave)
+    {
+        self.paused = YES;
+    }
+    return YES;
+}
+
+
+@end

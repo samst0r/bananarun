@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		22092C9018E4E03A00226A63 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22092C8F18E4E03A00226A63 /* SystemConfiguration.framework */; };
 		22550D4718DEEA5500168887 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22550D4618DEEA5500168887 /* GameOverScene.m */; };
-		2289F62418E35ED80035303F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289F62318E35ED80035303F /* GameKit.framework */; };
-		2289F62618E35EDD0035303F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289F62518E35EDD0035303F /* StoreKit.framework */; };
 		2289F62D18E370260035303F /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289F62C18E370260035303F /* GCHelper.m */; };
 		2289F63018E373830035303F /* RoadMarkerSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289F62F18E373830035303F /* RoadMarkerSpriteNode.m */; };
 		2289F63318E3758A0035303F /* 04B_19__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 2289F63218E3758A0035303F /* 04B_19__.TTF */; };
@@ -20,6 +18,7 @@
 		22ACEFD118E0C264001869CA /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ACEFD018E0C264001869CA /* MenuScene.m */; };
 		22D2EF5E18E4DCE9002ECA89 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D2EF5D18E4DCE9002ECA89 /* Crashlytics.framework */; };
 		22D8221418EC868B000DAFD2 /* InAppPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8221318EC868B000DAFD2 /* InAppPurchaseManager.m */; };
+		22D8221618EC8EC4000DAFD2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D8221518EC8EC4000DAFD2 /* iAd.framework */; };
 		22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A418DDAF0A004BA14C /* Foundation.framework */; };
 		22DE33A718DDAF0A004BA14C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */; };
 		22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DE33A818DDAF0A004BA14C /* UIKit.framework */; };
@@ -59,8 +58,6 @@
 		22092C8F18E4E03A00226A63 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22550D4518DEEA5500168887 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		22550D4618DEEA5500168887 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
-		2289F62318E35ED80035303F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		2289F62518E35EDD0035303F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2289F62B18E370260035303F /* GCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelper.h; sourceTree = "<group>"; };
 		2289F62C18E370260035303F /* GCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelper.m; sourceTree = "<group>"; };
 		2289F62E18E373830035303F /* RoadMarkerSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoadMarkerSpriteNode.h; path = SpriteNodes/RoadMarkerSpriteNode.h; sourceTree = "<group>"; };
@@ -77,6 +74,7 @@
 		22D2EF5D18E4DCE9002ECA89 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		22D8221218EC868B000DAFD2 /* InAppPurchaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InAppPurchaseManager.h; path = InAppPurchase/InAppPurchaseManager.h; sourceTree = "<group>"; };
 		22D8221318EC868B000DAFD2 /* InAppPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InAppPurchaseManager.m; path = InAppPurchase/InAppPurchaseManager.m; sourceTree = "<group>"; };
+		22D8221518EC8EC4000DAFD2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		22DE33A118DDAF0A004BA14C /* Banana Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banana Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DE33A418DDAF0A004BA14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,13 +114,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D8221618EC8EC4000DAFD2 /* iAd.framework in Frameworks */,
 				22092C9018E4E03A00226A63 /* SystemConfiguration.framework in Frameworks */,
 				22DE33A718DDAF0A004BA14C /* CoreGraphics.framework in Frameworks */,
 				22DE33A918DDAF0A004BA14C /* UIKit.framework in Frameworks */,
 				22DE33AB18DDAF0A004BA14C /* SpriteKit.framework in Frameworks */,
-				2289F62618E35EDD0035303F /* StoreKit.framework in Frameworks */,
 				22DE33A518DDAF0A004BA14C /* Foundation.framework in Frameworks */,
-				2289F62418E35ED80035303F /* GameKit.framework in Frameworks */,
 				22D2EF5E18E4DCE9002ECA89 /* Crashlytics.framework in Frameworks */,
 				B0CB5B07184C4287BBDCF231 /* libPods-Banana Run.a in Frameworks */,
 			);
@@ -202,10 +199,9 @@
 		22DE33A318DDAF0A004BA14C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22D8221518EC8EC4000DAFD2 /* iAd.framework */,
 				22092C8F18E4E03A00226A63 /* SystemConfiguration.framework */,
 				22D2EF5D18E4DCE9002ECA89 /* Crashlytics.framework */,
-				2289F62518E35EDD0035303F /* StoreKit.framework */,
-				2289F62318E35ED80035303F /* GameKit.framework */,
 				22DE33A418DDAF0A004BA14C /* Foundation.framework */,
 				22DE33A618DDAF0A004BA14C /* CoreGraphics.framework */,
 				22DE33A818DDAF0A004BA14C /* UIKit.framework */,
@@ -391,10 +387,10 @@
 						DevelopmentTeam = RCHUN65RQ4;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -645,8 +641,9 @@
 				GCC_PREFIX_HEADER = "FingerRun/Resources/Banana Run-Prefix.pch";
 				INFOPLIST_FILE = "FingerRun/Resources/Banana Run-Info.plist";
 				PRODUCT_NAME = "Banana Run";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "31C5DAD2-64EB-4E39-8B3E-1047A4E4B2C5";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -657,8 +654,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Samuel Ward (RCHUN65RQ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Samuel Ward (RCHUN65RQ4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/sam/Desktop/Repos/BananaRun,
@@ -667,8 +664,9 @@
 				GCC_PREFIX_HEADER = "FingerRun/Resources/Banana Run-Prefix.pch";
 				INFOPLIST_FILE = "FingerRun/Resources/Banana Run-Info.plist";
 				PRODUCT_NAME = "Banana Run";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "31C5DAD2-64EB-4E39-8B3E-1047A4E4B2C5";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

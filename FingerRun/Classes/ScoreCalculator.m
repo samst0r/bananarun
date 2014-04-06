@@ -19,7 +19,7 @@
 
 + (NSInteger)calculateScore:(NSInteger)speed {
     
-    NSInteger score = (speed * 5);
+    NSInteger score = (speed * 2);
 
     return score;
 }
