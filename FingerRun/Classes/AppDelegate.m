@@ -7,12 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import "GCHelper.h"
+
+#import <Crashlytics/Crashlytics.h>
+#import <Flurry.h>
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [Crashlytics startWithAPIKey:@"crashlytics-password"];
+    [Flurry setCrashReportingEnabled:NO];
+    [Flurry startSession:@"flurry-password"];
+    
     return YES;
 }
 
